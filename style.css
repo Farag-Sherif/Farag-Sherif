@@ -1,0 +1,433 @@
+html {
+  scroll-behavior: smooth;
+}
+body {
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-image: url("./img/bg-body.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: -1;
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/*larg*/
+@media (min-width: 1500px) {
+  .container {
+    width: 1300px;
+  }
+}
+/* ///////////////////////////////////////////loader/////////////////////////////// */
+/* From Uiverse.io by NlghtM4re */
+.loader-container {
+  position: absolute;
+  top: 40%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item {
+  position: absolute;
+  background-color: transparent;
+  width: calc(var(--i) * 2.5vmin);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: .9vmin solid rgb(0, 200, 255);
+  transform-style: preserve-3d;
+  transform: rotateX(70deg) translateZ(50px);
+  animation: my-move 3s ease-in-out calc(var(--i) * 0.08s) infinite;
+  box-shadow: 0px 0px 15px rgb(124, 124, 124),
+    inset 0px 0px 15px rgb(124, 124, 124);
+}
+
+@keyframes my-move {
+
+  0%,
+  100% {
+    transform: rotateX(70deg) translateZ(50px) translateY(0px);
+    filter: hue-rotate(0deg);
+  }
+
+  50% {
+    transform: rotateX(70deg) translateZ(50px) translateY(-50vmin);
+    filter: hue-rotate(180deg);
+  }
+}
+/* //////////////////////////////////header////////////////////////////////////// */
+
+header {
+  transition: .5s;
+  -webkit-transition: .5s;
+  -moz-transition: .5s;
+  -ms-transition: .5s;
+  -o-transition: .5s;
+.links{
+    a {
+      transition: 0.5s;
+      position: relative;
+
+      &:hover {
+        color: skyblue !important;
+      }
+    }
+
+    a::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: skyblue;
+      bottom: -5px;
+      left: 0;
+      transform: scaleX(0);
+      transition: transform 0.5s;
+      -webkit-transition: transform 0.5s;
+      -moz-transition: transform 0.5s;
+      -ms-transition: transform 0.5s;
+      -o-transition: transform 0.5s;
+      transform-origin: right;
+    }
+
+    a:active::after,
+    a:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+  }
+}
+
+.active {
+  color: skyblue !important;
+  position: relative;
+}
+
+.active::after {
+  transform: scaleX(1) !important;
+  transform-origin: left !important;
+  -webkit-transform: scaleX(1) !important;
+  -moz-transform: scaleX(1) !important;
+  -ms-transform: scaleX(1) !important;
+  -o-transform: scaleX(1) !important;
+}
+/* ////  ////////////////////////////landing/////////////////////////////////////// */
+.landing {
+  .image {
+    border: 2px solid skyblue;
+    padding: 14px;
+    box-shadow: 0 0 50px skyblue;
+    position: relative;
+
+  }
+
+  .circle {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: rotate 20s linear infinite;
+    -webkit-animation: rotate 20s linear infinite;
+  }
+
+  .img {
+    background-image: url("./img/farag-1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    mix-blend-mode: color-dodge;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border: 2px solid skyblue;
+    box-shadow: 0 0 5px skyblue;
+  }
+}
+
+.displayText {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  padding-right: 5px;
+  max-width: fit-content;
+  border-right: 5px solid #e5e5be;
+  animation: textAnimate 5s ease-in-out infinite !important;
+  -webkit-animation: textAnimate 5s ease-in-out infinite !important;
+}
+
+@keyframes textAnimate {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  }
+
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
+/* ////////////////////////////skills//////////////////////////// */
+.languages {
+  padding: var(--main-padding) 0;
+  overflow: hidden;
+}
+
+.skills-wrapper {
+  animation: move 40s linear infinite;
+  -webkit-animation: move 40s linear infinite;
+}
+
+.move-reverse .skills-wrapper {
+  animation: move-reverse 40s linear infinite;
+  -webkit-animation: move-reverse 40s linear infinite;
+}
+
+.skills-slide {
+  width: 200px !important;
+
+  img {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes move-reverse {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -o-transform: translateX(100%);
+  }
+}
+
+
+/* ///////////////////experience//////////////////////////// */
+.experience {
+  .content {
+
+    .box {
+      border: 2px solid skyblue;
+      padding: 20px;
+      box-shadow: 0 0 20px skyblue;
+      transition: 0.5s;
+      min-width: 300px;
+      max-width: 100%;
+      width: calc(33.333% - 20px);
+      height: 250px;
+      -webkit-transition: 0.5s;
+      -moz-transition: 0.5s;
+      -ms-transition: 0.5s;
+      -o-transition: 0.5s;
+
+      p {
+        opacity: 0;
+        transition: 0.5s;
+        visibility: hidden;
+        display: none;
+        -webkit-transition: 0.5s;
+        -moz-transition: 0.5s;
+        -ms-transition: 0.5s;
+        -o-transition: 0.5s;
+      }
+
+      &:hover {
+        box-shadow: 0 0 50px skyblue;
+        transform: scale(1.05);
+        width: calc(50%);
+
+        .header {
+          flex-direction: row;
+
+        }
+
+        p {
+          opacity: 1;
+          visibility: visible;
+          display: block;
+        }
+      }
+    }
+
+    @media (max-width: 992px) {
+
+      .box {
+        width: 80%;
+        max-width: 100%;
+        min-width: 250px;
+
+        &:hover {
+          box-shadow: 0 0 50px skyblue;
+          transform: scale(1.05);
+          width: calc(100%);
+
+          .header {
+            flex-direction: row;
+
+          }
+
+          p {
+            opacity: 1;
+            visibility: visible;
+            display: block;
+          }
+        }
+      }
+
+    }
+  }
+
+  .experience-container {
+    .box {
+      border: 2px solid skyblue;
+      padding: 20px;
+      box-shadow: 0 0 20px skyblue;
+      transition: 0.5s;
+      width: 100%;
+      -webkit-transition: 0.5s;
+      -moz-transition: 0.5s;
+      -ms-transition: 0.5s;
+      -o-transition: 0.5s;
+
+      &:hover {
+        box-shadow: 0 0 50px skyblue;
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+
+/* ///////////////////projects//////////////////////////// */
+.projects {
+  .projects-container {
+    .box {
+      /* width: calc((100% - 20px) / 2);
+      min-width: 300px;
+      max-width: 100%; */
+      border: 2px solid skyblue;
+      box-shadow: 0 0 20px skyblue;
+      transition: 0.5s;
+      -webkit-transition: 0.5s;
+      -moz-transition: 0.5s;
+      -ms-transition: 0.5s;
+      -o-transition: 0.5s;
+
+      &:hover {
+        box-shadow: 0 0 50px skyblue;
+        transform: scale(1.05);
+      }
+    }
+
+  }
+}
+
+
+/* ///////////////////title & button//////////////////////////// */
+
+.title {
+  background-image: linear-gradient(to right,
+      #003973 0%,
+      #e5e5be 51%,
+      #003973 100%);
+}
+
+.title {
+  transition: 0.5s;
+  background-size: 200% auto;
+  background-clip: text;
+  color: transparent;
+  animation: backgroundPosition 5s linear infinite;
+  -webkit-animation: backgroundPosition 5s linear infinite;
+}
+
+.title:hover {
+  background-position: right center;
+  text-decoration: none;
+}
+
+@keyframes backgroundPosition {
+  0% {
+    background-position: 200% center;
+  }
+
+  100% {
+    background-position: 0% center;
+  }
+}
+
+.button {
+  background-image: linear-gradient(to right,
+      #003973 0%,
+      #e5e5be 51%,
+      #003973 100%);
+}
+
+.button {
+  padding: 15px 45px;
+  text-align: center;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 10px;
+  display: block;
+}
+
+.button:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}

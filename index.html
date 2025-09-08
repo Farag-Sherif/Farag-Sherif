@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="all.min.css">
+        <title>Farag Mohammed Sherif</title>
+    </head>
+    <body class="bg-gray-900 relative isolate">
+        <!-- loading page -->
+        <div id="loading-screen" class="fixed inset-0 bg-gray-900 flex items-center justify-center z-200">
+            <div class="loader-container">
+                <div class="item" style="--i:0;"></div>
+                <div class="item" style="--i:1;"></div>
+                <div class="item" style="--i:2;"></div>
+                <div class="item" style="--i:3;"></div>
+                <div class="item" style="--i:4;"></div>
+                <div class="item" style="--i:5;"></div>
+                <div class="item" style="--i:6;"></div>
+                <div class="item" style="--i:7;"></div>
+                <div class="item" style="--i:8;"></div>
+                <div class="item" style="--i:9;"></div>
+                <div class="item" style="--i:10;"></div>
+                <div class="item" style="--i:11;"></div>
+                <div class="item" style="--i:12;"></div>
+                <div class="item" style="--i:13;"></div>
+                <div class="item" style="--i:14;"></div>
+                <div class="item" style="--i:15;"></div>
+                <div class="item" style="--i:16;"></div>
+                <div class="item" style="--i:17;"></div>
+                <div class="item" style="--i:18;"></div>
+                <div class="item" style="--i:19;"></div>
+                <div class="item" style="--i:20;"></div>
+            </div>
+        </div>
+    </div>
+    <!-- ======================background====================== -->
+    <div aria-hidden="true" class="fixed inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
+        <div style="
+          clip-path: polygon(
+            74.1% 44.1%,
+            100% 61.6%,
+            97.5% 26.9%,
+            85.5% 0.1%,
+            80.7% 2%,
+            72.5% 32.5%,
+            60.2% 62.4%,
+            52.4% 68.1%,
+            47.5% 58.3%,
+            45.2% 34.5%,
+            27.5% 76.7%,
+            0.1% 64.9%,
+            17.9% 100%,
+            27.6% 76.8%,
+            76.1% 97.7%,
+            74.1% 44.1%
+          );
+        " class="relative left-[calc(50%-11rem)] aspect-1155/678 w-144.5 -translate-x-1/2 rotate-30 bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-288.75"></div>
+    </div>
+    <!-- ===================================start header=================================== -->
+    <div class="bg-gray-900">
+        <header class="fixed inset-x-0 top-0 z-100 border-b-1 border-gray-500">
+            <nav aria-label="Global" class="flex items-center justify-between py-6 container mx-auto">
+                <div class="flex lg:flex-1">
+                    <a href="index.html" class="-m-1.5 p-1.5">
+                        <span class="text-4xl font-bold text-white title">Farag Sherif</span>
+                    </a>
+                </div>
+                <div class="flex lg:hidden">
+                    <button
+                        type="button"
+                        command="show-modal"
+                        commandfor="mobile-menu"
+                        class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-200"
+                    >
+                        <span class="sr-only">Open main menu</span>
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.5"
+                            data-slot="icon"
+                            aria-hidden="true"
+                            class="size-6"
+                        >
+                            <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="hidden lg:flex lg:gap-x-12 links">
+                    <a href="index.html" class="text-xl font-semibold text-white hover:text-gray-400 duration-500 active">
+                        Home
+                    </a
+            >
+                    <a href="#skills" class="text-xl font-semibold text-white hover:text-gray-400 duration-500">
+                        Skills
+                    </a
+            >
+                    <a href="#about-me" class="text-xl font-semibold text-white hover:text-gray-400 duration-500">
+                        About Me
+                    </a
+            >
+                    <a href="#experience" class="text-xl font-semibold text-white hover:text-gray-400 duration-500">
+                        Experience
+                    </a
+            >
+                    <a href="#projects" class="text-xl font-semibold text-white hover:text-gray-400 duration-500">
+                        Projects
+                    </a
+            >
+                    <a href="#contact-me" class="text-xl font-semibold text-white hover:text-gray-400 duration-500">
+                        Contact Me
+                    </a
+            >
+                </div>
+            </nav>
+            <el-dialog>
+                <dialog id="mobile-menu" class="backdrop:bg-transparent lg:hidden">
+                    <div tabindex="0" class="fixed inset-0 focus:outline-none">
+                        <el-dialog-panel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gray-900 p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-100/10">
+                            <div class="flex items-center justify-between">
+                                <a href="index.html" class="-m-1.5 p-1.5">
+                                    <span class="text-2xl font-semibold title">
+                                        Farag Sherif
+                                    </span
+                    >
+                                </a>
+                                <button
+                                    type="button"
+                                    command="close"
+                                    commandfor="mobile-menu"
+                                    class="-m-2.5 rounded-md p-2.5 text-gray-200"
+                                >
+                                    <span class="sr-only">Close menu</span>
+                                    <svg
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="1.5"
+                                        data-slot="icon"
+                                        aria-hidden="true"
+                                        class="size-6"
+                                    >
+                                        <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="mt-6 flow-root">
+                                <div class="-my-6 divide-y divide-white/10">
+                                    <div class="space-y-2 py-6 links">
+                                        <a href="index.html" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5 active">
+                                            Home
+                                        </a
+                      >
+                                        <a href="#skills" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">
+                                            Skills
+                                        </a
+                      >
+                                        <a href="#about-me" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">
+                                            About Me
+                                        </a
+                      >
+                                        <a href="#experience" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">
+                                            Experience
+                                        </a
+                      >
+                                        <a href="#projects" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">
+                                            Projects
+                                        </a
+                      >
+                                        <a href="#contact-me" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">
+                                            Contact Me
+                                        </a
+                      >
+                                    </div>
+                                </div>
+                            </div>
+                        </el-dialog-panel>
+                    </div>
+                </dialog>
+            </el-dialog>
+        </header>
+    </div>
+    <!-- start landing -->
+    <section class="landing">
+        <div class="mx-auto py-24 container">
+            <div class="flex gap-x-5 items-center justify-center lg:justify-between md:justify-center sm:justify-center lg:flex-nowrap md:flex-wrap-reverse sm:flex-wrap-reverse flex-wrap-reverse">
+                <div class="mx-auto max-w-2xl lg:mx-0 lg:flex-auto lg:py-32 text-left">
+                    <h2 class="text-4xl font-semibold tracking-tight text-balance text-white sm:text-4xl lg:text-6xl leading-[1.5]">
+                        <span class="text-2xl block lg:text-4xl" style="color:#b0bdad"> Hi! I'm</span>
+                        <span class="title">
+                            Farag Mohammed Sherif.
+                        </span>
+                    </h2>
+                    <h2 class="text-3xl font-semibold tracking-tight text-balance text-white  leading-[1.5] flex items-center gap-3">
+                        <span class="text-2xl text-gray-300"> I'm a</span>
+                        <div class="title displayText"></div>
+                    </span>
+                </h2>
+                <p class="text-lg/8 text-pretty text-gray-300">
+                    Passionate Frontend Developer skilled in building interactive, responsive websites using HTML, CSS, JavaScript, TypeScript, Tailwind, and React. Strong in problem-solving, teamwork, and always learning new technologies to improve user experience.
+                </p>
+                <div class="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
+                    <a href="https://drive.google.com/uc?export=download&id=1ZATtrUd181_mrm4xfkOsvvidPlJHMuIj" class="rounded-md button bg-gray-700 px-10 py-4 text-lg font-semibold text-white inset-ring inset-ring-white/5 hover:bg-gray-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-300">
+                        <i class="fas fa-download mr-2"></i>
+                        Download CV
+                    </a>
+                    <a href="#about-me" class="text-lg font-semibold text-white hover:text-gray-100">
+                        About Me
+                        <span aria-hidden="true">→</span>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <div class="image mt-16 md:h-[400px] lg:mt-8 md:w-[400px] w-[300px] h-[300px] bg-white/5 ring-1 ring-white/10  flex items-center justify-center mb-15 mx-auto" style="border-radius: 50%">
+                    <div class="img"></div>
+                    <div class="circle">
+                        <svg
+                            width="100%"
+                            height="100%"
+                            viewBox="0 0 400 400"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <!-- تعريف مرشح التوهج (مشابه لـ box-shadow) -->
+                            <defs>
+                                <filter
+                                    id="glow"
+                                    x="-50%"
+                                    y="-50%"
+                                    width="200%"
+                                    height="200%"
+                                >
+                                    <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur"/>
+                                    <feMerge>
+                                        <feMergeNode in="blur"/>
+                                        <feMergeNode in="SourceGraphic"/>
+                                    </feMerge>
+                                </filter>
+                            </defs>
+                            <circle
+                                cx="200"
+                                cy="7"
+                                r="5"
+                                fill="skyblue"
+                                filter="url(#glow)"
+                            />
+                            <circle
+                                cx="375.33"
+                                cy="120"
+                                r="5"
+                                fill="skyblue"
+                                filter="url(#glow)"
+                            />
+                            <circle
+                                cx="371.33"
+                                cy="290"
+                                r="5"
+                                fill="skyblue"
+                                filter="url(#glow)"
+                            />
+                            <circle
+                                cx="200"
+                                cy="394"
+                                r="5"
+                                fill="skyblue"
+                                filter="url(#glow)"
+                            />
+                            <circle
+                                cx="23.67"
+                                cy="280"
+                                r="5"
+                                fill="skyblue"
+                                filter="url(#glow)"
+                            />
+                            <circle
+                                cx="34.67"
+                                cy="100"
+                                r="5"
+                                fill="skyblue"
+                                filter="url(#glow)"
+                            />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end landing -->
+<!-- start programming language -->
+<!-- ======================start languages====================== -->
+<!-- skills -->
+<section class="languages container" id="skills">
+    <div class="skills myskills flex gap-4 mt-10">
+        <div class="skills-wrapper flex gap-4">
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl">
+                <img src="img/language/icons8-html-5-48.png">
+                HTML
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl">
+                <img src="img/language/icons8-css3-48.png">
+                CSS
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl">
+                <img src="img/language/icons8-javascript-48.png">
+                Javascript
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl">
+                <img src="img/language/icons8-github-logo-48.png">
+                Github
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl">
+                <img src="img/language/icons8-git-48.png">
+                Git
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl">
+                <img src="img/language/icons8-bootstrap-48.png">
+                Bootstrap
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl">
+                <img src="img/language/icons8-react-js-48.png">
+                React Js
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl">
+                <img src="img/language/icons8-tailwindcss-48.png">
+                Tailwind
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl">
+                <img src="img/language/icons8-c++-48.png">
+                C++
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl">
+                <img src="img/language/icons8-java-48.png">
+                Java
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl">
+                <img src="img/language/icons8-typescript-48.png">
+                Typescript
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl">
+                <img src="img/language/icons8-figma-48.png">
+                Figma
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl">
+                <img src="img/language/nextjs-icon-dark-background.png">
+                Next.JS
+            </div>
+        </div>
+        <div class="skills-wrapper flex gap-4">
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl">
+                <img src="img/language/icons8-html-5-48.png">
+                HTML
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl">
+                <img src="img/language/icons8-css3-48.png">
+                CSS
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl">
+                <img src="img/language/icons8-javascript-48.png">
+                Javascript
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl">
+                <img src="img/language/icons8-github-logo-48.png">
+                Github
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl">
+                <img src="img/language/icons8-git-48.png">
+                Git
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl">
+                <img src="img/language/icons8-bootstrap-48.png">
+                Bootstrap
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl">
+                <img src="img/language/icons8-react-js-48.png">
+                React Js
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl">
+                <img src="img/language/icons8-tailwindcss-48.png">
+                Tailwind
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl">
+                <img src="img/language/icons8-c++-48.png">
+                C++
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl">
+                <img src="img/language/icons8-java-48.png">
+                Java
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl">
+                <img src="img/language/icons8-typescript-48.png">
+                Typescript
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl">
+                <img src="img/language/icons8-figma-48.png">
+                Figma
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl">
+                <img src="img/language/nextjs-icon-dark-background.png">
+                Next.JS
+            </div>
+        </div>
+    </div>
+    <div class="skills myskills flex gap-4 move-reverse" style="direction: rtl; margin: 30px auto 30px">
+        <div class="skills-wrapper flex gap-4">
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl" style="direction: ltr">
+                <img src="img/language/icons8-java-48.png">
+                Java
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl" style="direction: ltr">
+                <img src="img/language/icons8-github-logo-48.png">
+                Github
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl" style="direction: ltr">
+                <img src="img/language/icons8-javascript-48.png">
+                Javascript
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl" style="direction: ltr">
+                <img src="img/language/icons8-react-js-48.png">
+                React Js
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl" style="direction: ltr">
+                <img src="img/language/nextjs-icon-dark-background.png">
+                Next.JS
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl" style="direction: ltr">
+                <img src="img/language/icons8-html-5-48.png">
+                HTML
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl" style="direction: ltr">
+                <img src="img/language/icons8-git-48.png">
+                Git
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl" style="direction: ltr">
+                <img src="img/language/icons8-typescript-48.png">
+                Typescript
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl" style="direction: ltr">
+                <img src="img/language/icons8-tailwindcss-48.png">
+                Tailwind
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl" style="direction: ltr">
+                <img src="img/language/icons8-css3-48.png">
+                CSS
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl" style="direction: ltr">
+                <img src="img/language/icons8-figma-48.png">
+                Figma
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl" style="direction: ltr">
+                <img src="img/language/icons8-bootstrap-48.png">
+                Bootstrap
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl" style="direction: ltr">
+                <img src="img/language/icons8-c++-48.png">
+                C++
+            </div>
+        </div>
+        <div class="skills-wrapper flex gap-4">
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl" style="direction: ltr">
+                <img src="img/language/icons8-java-48.png">
+                Java
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl" style="direction: ltr">
+                <img src="img/language/icons8-github-logo-48.png">
+                Github
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl" style="direction: ltr">
+                <img src="img/language/icons8-javascript-48.png">
+                Javascript
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl" style="direction: ltr">
+                <img src="img/language/icons8-react-js-48.png">
+                React Js
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl" style="direction: ltr">
+                <img src="img/language/nextjs-icon-dark-background.png">
+                Next.JS
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl" style="direction: ltr">
+                <img src="img/language/icons8-html-5-48.png">
+                HTML
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl" style="direction: ltr">
+                <img src="img/language/icons8-git-48.png">
+                Git
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl" style="direction: ltr">
+                <img src="img/language/icons8-typescript-48.png">
+                Typescript
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl" style="direction: ltr">
+                <img src="img/language/icons8-tailwindcss-48.png">
+                Tailwind
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl" style="direction: ltr">
+                <img src="img/language/icons8-css3-48.png">
+                CSS
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl" style="direction: ltr">
+                <img src="img/language/icons8-figma-48.png">
+                Figma
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl" style="direction: ltr">
+                <img src="img/language/icons8-bootstrap-48.png">
+                Bootstrap
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl" style="direction: ltr">
+                <img src="img/language/icons8-c++-48.png">
+                C++
+            </div>
+        </div>
+    </div>
+    <div class="skills myskills flex gap-4">
+        <div class="skills-wrapper flex gap-4">
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl">
+                <img src="img/language/nextjs-icon-dark-background.png">
+                Next.JS
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl">
+                <img src="img/language/icons8-typescript-48.png">
+                Typescript
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl">
+                <img src="img/language/icons8-figma-48.png">
+                Figma
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl">
+                <img src="img/language/icons8-java-48.png">
+                Java
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl">
+                <img src="img/language/icons8-c++-48.png">
+                C++
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl">
+                <img src="img/language/icons8-tailwindcss-48.png">
+                Tailwind
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl">
+                <img src="img/language/icons8-react-js-48.png">
+                React Js
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl">
+                <img src="img/language/icons8-bootstrap-48.png">
+                Bootstrap
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl">
+                <img src="img/language/icons8-javascript-48.png">
+                Javascript
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl">
+                <img src="img/language/icons8-github-logo-48.png">
+                Github
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl">
+                <img src="img/language/icons8-git-48.png">
+                Git
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl">
+                <img src="img/language/icons8-css3-48.png">
+                CSS
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl">
+                <img src="img/language/icons8-html-5-48.png">
+                HTML
+            </div>
+        </div>
+        <div class="skills-wrapper flex gap-4">
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl">
+                <img src="img/language/nextjs-icon-dark-background.png">
+                Next.JS
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl">
+                <img src="img/language/icons8-typescript-48.png">
+                Typescript
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl">
+                <img src="img/language/icons8-figma-48.png">
+                Figma
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl">
+                <img src="img/language/icons8-java-48.png">
+                Java
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl">
+                <img src="img/language/icons8-c++-48.png">
+                C++
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl">
+                <img src="img/language/icons8-tailwindcss-48.png">
+                Tailwind
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl">
+                <img src="img/language/icons8-react-js-48.png">
+                React Js
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl">
+                <img src="img/language/icons8-bootstrap-48.png">
+                Bootstrap
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl">
+                <img src="img/language/icons8-javascript-48.png">
+                Javascript
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl">
+                <img src="img/language/icons8-github-logo-48.png">
+                Github
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl">
+                <img src="img/language/icons8-git-48.png">
+                Git
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl">
+                <img src="img/language/icons8-css3-48.png">
+                CSS
+            </div>
+            <div class="skills-slide bg-white/8 text-gray-100 px-4 py-3 flex items-center gap-3 text-xl rounded-xl">
+                <img src="img/language/icons8-html-5-48.png">
+                HTML
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ======================end languages====================== -->
+<!-- ======================start about====================== -->
+<section class="about container" id="about-me">
+    <div class="title">
+        <h2 class="text-5xl  font-bold tracking-tight text-balance mt-15 mb-6">
+            About me
+        </h2>
+    </div>
+    <div class="content">
+        <p class="text-lg/8 text-pretty text-gray-300 mb-9">
+            I am a full stack web developer, with a passion for creating
+          user-friendly and visually appealing websites. I have a strong
+          foundation in HTML, CSS, and JavaScript, and I am constantly learning
+          new technologies to enhance my skills.
+        </p>
+        <p class="text-lg/8 text-pretty text-gray-300 mb-9">
+            I am a full stack web developer, with a passion for creating
+          user-friendly and visually appealing websites. I have a strong
+          foundation in HTML, CSS, and JavaScript, and I am constantly learning
+          new technologies to enhance my skills.
+        </p>
+        <p class="text-lg/8 text-pretty text-gray-300 mb-9">
+            I am a full stack web developer, with a passion for creating
+          user-friendly and visually appealing websites. I have a strong
+          foundation in HTML, CSS, and JavaScript, and I am constantly learning
+          new technologies to enhance my skills.
+        </p>
+    </div>
+    <hr style="width: 30%; height: 4px" class="bg-gray-100 mx-auto mt-20 mb-15">
+</section>
+<!-- ======================end about====================== -->
+<!-- ======================end about====================== -->
+<!-- ======================start experience====================== -->
+<section class="experience container" id="experience">
+    <div class="title flex items-center gap-4 justify-center mb-15 lg:flex-nowrap md:flex-nowrap sm:flex-wrap flex-wrap">
+        <h2 class="text-8xl  font-bold tracking-tight text-balance">
+            +1
+        </h2>
+        <p class="text-lg/8 text-pretty text-gray-300">
+            I am a full stack web developer, with a passion for creating
+          user-friendly and visually appealing websites. I have a strong
+          foundation in HTML, CSS, and JavaScript, and I am constantly learning
+          new technologies to enhance my skills.
+        </p>
+    </div>
+    <div class="content flex items-center gap-4 justify-center mb-8 lg:flex-nowrap md:flex-wrap sm:flex-wrap flex-wrap">
+        <div class="box bg-white/5 text-gray-100 px-10 py-10 flex flex-col items-center gap-2 text-xl rounded-2xl justify-center">
+            <div class=" header flex flex-col items-center gap-8">
+                <i class="fas fa-code text-4xl text-gray-100" style="color:#b0bdad"></i>
+                <h3 class="text-3xl font-semibold text-center">web Development</h3>
+            </div>
+            <p class="text-lg/8 text-pretty text-gray-300 text-center">
+                Creating responsive and visually appealing websites using modern web technologies.
+            </p>
+        </div>
+        <div class="box bg-white/5 text-gray-100 px-10 py-10 flex flex-col items-center gap-2 text-xl rounded-2xl justify-center">
+            <div class=" header flex flex-col items-center gap-8">
+                <i class="fas fa-user-alt text-4xl text-gray-100" style="color:#b0bdad"></i>
+                <h3 class="text-3xl font-semibold text-center">UI/UX Design</h3>
+            </div>
+            <p class="text-lg/8 text-pretty text-gray-300 text-center">
+                Designing user interfaces and experiences that are intuitive and engaging.
+            </p>
+        </div>
+        <div class="box bg-white/5 text-gray-100 px-10 py-10 flex flex-col items-center gap-2 text-xl rounded-2xl justify-center">
+            <div class=" header flex flex-col items-center gap-8">
+                <i class="fas fa-tasks text-4xl text-gray-100" style="color:#b0bdad"></i>
+                <h3 class="text-3xl font-semibold text-center">Project Management</h3>
+            </div>
+            <p class="text-lg/8 text-pretty text-gray-300 text-center">
+                Leading and coordinating projects to ensure timely delivery and quality outcomes.
+            </p>
+        </div>
+    </div>
+    <div class="my-experiences py-20">
+        <div class="header text-center mb-15">
+            <h4 class="text-2xl font-semibold tracking-tight text-balance text-gray-300">My Journey</h4>
+            <h1 class="text-4xl font-bold tracking-tight text-balance title my-2 sm:text-4xl  md:text-5xl lg:text-6xl">Professional Experience</h1>
+            <p class="text-lg/8 text-pretty text-gray-300">My ProfessionalExperience is as follows:</p>
+        </div>
+        <div class="experience-container ">
+            <div class="box bg-white/5 px-10 py-10  rounded-2xl w-full mb-5">
+                <h2 class="text-3xl font-semibold  text-gray-300">Frontend Developer</h2>
+                <h3 class="text-2xl font-bold py-1" style="color:#b0bdad">Devly Solutions</h3>
+                <h4 class="text-lg font-semibold  text-gray-400">Freelancer</h4>
+                <h4 class="text-lg font-semibold  text-gray-400">From: Sept 2025</h4>
+                <h4 class="text-lg font-semibold  text-gray-400">To: Present</h4>
+            </div>
+            <div class="box bg-white/5 px-10 py-10  rounded-2xl w-full mb-5">
+                <h2 class="text-3xl font-semibold  text-gray-300">Frontend Developer</h2>
+                <h3 class="text-2xl font-bold py-1" style="color:#b0bdad">Google Developer Groups (GDG) on CIC</h3>
+                <h4 class="text-lg font-semibold  text-gray-400">internship</h4>
+                <h4 class="text-lg font-semibold  text-gray-400">From: May 2025</h4>
+                <h4 class="text-lg font-semibold  text-gray-400">To: Sept 2025</h4>
+            </div>
+            <div class="box bg-white/5 px-10 py-10  rounded-2xl w-full mb-5">
+                <h2 class="text-3xl font-semibold  text-gray-300">PR Specialist</h2>
+                <h3 class="text-2xl font-bold py-1" style="color:#b0bdad">MUFIX Community</h3>
+                <h4 class="text-lg font-semibold  text-gray-400">FullTime</h4>
+                <h4 class="text-lg font-semibold  text-gray-400">From: Jan 2023</h4>
+                <h4 class="text-lg font-semibold  text-gray-400">To: Present</h4>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ======================end experience====================== -->
+<!-- ======================start projects====================== -->
+<section class="projects container mb-20" id="projects">
+    <div class="header text-center mb-15">
+        <h4 class="text-2xl font-semibold tracking-tight text-balance text-gray-300">My Works</h4>
+        <h1 class="text-4xl font-bold tracking-tight text-balance title my-2 sm:text-4xl  md:text-5xl lg:text-6xl">Featured Projects</h1>
+        <p class="text-lg/8 text-pretty text-gray-300">My Projects are as follows:</p>
+    </div>
+    <div class="projects-container grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4">
+        <div class="box  bg-white/5 rounded-2xl mb-5 overflow-hidden">
+            <img src="img/projects/4.png" alt="" class="w-full h-60 object-cover object-top mb-5">
+            <div class="text px-6 py-4">
+                <h2 class="text-3xl font-semibold  text-gray-300 mb-5">tadabir</h2>
+                <p class="text-lg/8 text-pretty text-gray-300">Built an Islamic learning platform showcasing Quran recitations by esteemed sheikhs, an extensive collection of religious texts, daily Dhikr prompts. It provides interactive Quran study with word-by-word explanations, precise prayer timings with countdowns, and a memorization feature for efficient, structured learning. The intuitive, responsive design ensures smooth access across all devices for users. The platform nurtures spiritual development, encourages consistent Islamic practice, and fosters community engagement.</p>
+                <div class="tools text-blue-300 flex gap-4 items-center mt-5 flex-wrap">
+                    <span class="bg-white/20 rounded-2xl px-6 py-1">HTML</span>
+                    <span class="bg-white/20 rounded-2xl px-6 py-1">CSS</span>
+                    <span class="bg-white/20 rounded-2xl px-6 py-1">JavaScript</span>
+                    <span class="bg-white/20 rounded-2xl px-6 py-1">React JS</span>
+                    <span class="bg-white/20 rounded-2xl px-6 py-1">Responsive Design</span>
+                    <span class="bg-white/20 rounded-2xl px-6 py-1">API</span>
+                    <span class="bg-white/20 rounded-2xl px-6 py-1">Animation</span>
+                    <span class="bg-white/20 rounded-2xl px-6 py-1">Tailwind</span>
+                </div>
+                <div class="links flex gap-4 items-center mt-10 mb-5 lg:flex-nowrap md:flex-nowrap sm:flex-wrap flex-wrap">
+                    <button class="text-lg/8 text-pretty text-gray-300 flex items-center gap-2 border-1 border-gray-300 rounded-4xl px-8 py-3 hover:bg-white/10 transition-all duration-500 ease-in-out w-full justify-center text-bolded">
+                        Soon
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="box  bg-white/5 rounded-2xl mb-5 overflow-hidden">
+            <img src="img/projects/3.png" alt="" class="w-full h-60 object-cover object-top mb-5">
+            <div class="text px-6 py-4">
+                <h2 class="text-3xl font-semibold  text-gray-300 mb-5">Movie & TV Show Website</h2>
+                <p class="text-lg/8 text-pretty text-gray-300">Developed a dynamic movie and TV show platform using React.js, leveraging (TMDb) API for real-time content updates. The platform offers a sleek, responsive interface, enabling users to browse, search, and filter titles by genre, release date, or ratings effortlessly. It includes secure user authentication, allowing personalized watchlists and review submissions to boost engagement. Optimized for seamless performance across devices, it delivers an immersive experience for entertainment enthusiasts.</p>
+                <div class="tools text-blue-300 flex gap-4 items-center mt-5 flex-wrap">
+                    <span class="bg-white/20 rounded-2xl px-6 py-1">HTML</span>
+                    <span class="bg-white/20 rounded-2xl px-6 py-1">CSS</span>
+                    <span class="bg-white/20 rounded-2xl px-6 py-1">JavaScript</span>
+                    <span class="bg-white/20 rounded-2xl px-6 py-1">React JS</span>
+                    <span class="bg-white/20 rounded-2xl px-6 py-1">Responsive Design</span>
+                    <span class="bg-white/20 rounded-2xl px-6 py-1">API</span>
+                    <span class="bg-white/20 rounded-2xl px-6 py-1">Animation</span>
+                </div>
+                <div class="links flex gap-4 items-center mt-10 mb-5 lg:flex-nowrap md:flex-nowrap sm:flex-wrap flex-wrap">
+                    <a href="https://movie-project-react-js.netlify.app/" target="_blank" class="text-lg/8 text-pretty text-gray-100 flex items-center gap-2 bg-blue-500 rounded-4xl px-8 py-3 hover:bg-blue-600 transition-all duration-500 ease-in-out lg:w-[50%] md:w-[50%] sm:w-full w-full justify-center text-bolded">
+                        <i class="fas fa-external-link-alt"></i>
+                        Live Demo
+                    </a>
+                    <a href="https://github.com/Farag-Sherif/Movie-Project.git" target="_blank" class="text-lg/8 text-pretty text-gray-300 flex items-center gap-2 border-1 border-gray-300 rounded-4xl px-8 py-3 hover:bg-white/10 transition-all duration-500 ease-in-out lg:w-[50%] md:w-[50%] sm:w-full w-full justify-center text-bolded">
+                        <i class="fab fa-github"></i>
+                        Source Code
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="box  bg-white/5 rounded-2xl mb-5 overflow-hidden">
+            <img src="img/projects/6.png" alt="" class="w-full h-60 object-cover object-top mb-5">
+            <div class="text px-6 py-4">
+                <h2 class="text-3xl font-semibold  text-gray-300 mb-5">AQAR</h2>
+                <p class="text-lg/8 text-pretty text-gray-300">Collaborated with a team to develop a real estate platform showcasing premium villas and apartments, featuring detailed property listings, and responsive design. Implemented a secure login system and smooth navigation to ensure seamless user access. The platform includes an advanced admin dashboard to manage bookings, add or edit properties, and maintain full control. It delivers a modern, professional experience, enhancing property discovery and client-agent interaction.</p>
+                <div class="tools text-blue-300 flex gap-4 items-center mt-5 flex-wrap">
+                    <span class="bg-white/20 rounded-2xl px-6 py-1">HTML</span>
+                    <span class="bg-white/20 rounded-2xl px-6 py-1">CSS</span>
+                    <span class="bg-white/20 rounded-2xl px-6 py-1">JavaScript</span>
+                    <span class="bg-white/20 rounded-2xl px-6 py-1">Bootstrap</span>
+                    <span class="bg-white/20 rounded-2xl px-6 py-1">React JS</span>
+                    <span class="bg-white/20 rounded-2xl px-6 py-1">API</span>
+                    <span class="bg-white/20 rounded-2xl px-6 py-1">Authentication</span>
+                    <span class="bg-white/20 rounded-2xl px-6 py-1">Responsive Design</span>
+                    <span class="bg-white/20 rounded-2xl px-6 py-1">Animation</span>
+                </div>
+                <div class="links flex gap-4 items-center mt-10 mb-5 lg:flex-nowrap md:flex-nowrap sm:flex-wrap flex-wrap">
+                    <a href="https://mohamedabuzahda.github.io/Real-State/" target="_blank" class="text-lg/8 text-pretty text-gray-100 flex items-center gap-2 bg-blue-500 rounded-4xl px-8 py-3 hover:bg-blue-600 transition-all duration-500 ease-in-out lg:w-[50%] md:w-[50%] sm:w-full w-full justify-center text-bolded">
+                        <i class="fas fa-external-link-alt"></i>
+                        Live Demo
+                    </a>
+                    <a href="https://github.com/mohamedabuzahda/Real-State.git" target="_blank" class="text-lg/8 text-pretty text-gray-300 flex items-center gap-2 border-1 border-gray-300 rounded-4xl px-8 py-3 hover:bg-white/10 transition-all duration-500 ease-in-out lg:w-[50%] md:w-[50%] sm:w-full w-full justify-center text-bolded">
+                        <i class="fab fa-github"></i>
+                        Source Code
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="box  bg-white/5 rounded-2xl mb-5 overflow-hidden">
+            <img src="img/projects/2.png" alt="" class="w-full h-60 object-cover object-top mb-5">
+            <div class="text px-6 py-4">
+                <h2 class="text-3xl font-semibold  text-gray-300 mb-5">Book Store</h2>
+                <p class="text-lg/8 text-pretty text-gray-300">Developed an eCommerce bookstore platform using React.js, delivering a seamless user experience with features such as intuitive book browsing, user authentication system, dynamic shopping cart, and a comprehensive admin dashboard for efficient management of inventory, orders, and user data. The application ensures scalability, responsiveness, and a modern, user-friendly interface, enhancing customer engagement and streamlining administrative tasks.</p>
+                <div class="tools text-blue-300 flex gap-4 items-center mt-5 flex-wrap">
+                    <span class="bg-white/20 rounded-2xl px-6 py-1">HTML</span>
+                    <span class="bg-white/20 rounded-2xl px-6 py-1">CSS</span>
+                    <span class="bg-white/20 rounded-2xl px-6 py-1">JavaScript</span>
+                    <span class="bg-white/20 rounded-2xl px-6 py-1">React JS</span>
+                    <span class="bg-white/20 rounded-2xl px-6 py-1">Responsive Design</span>
+                    <span class="bg-white/20 rounded-2xl px-6 py-1">API</span>
+                    <span class="bg-white/20 rounded-2xl px-6 py-1">Authentication</span>
+                    <span class="bg-white/20 rounded-2xl px-6 py-1">Animation</span>
+                </div>
+                <div class="links flex gap-4 items-center mt-10 mb-5 lg:flex-nowrap md:flex-nowrap sm:flex-wrap flex-wrap">
+                    <a href="https://www.linkedin.com/posts/farag-mohammed-sherif-679780298_%D8%A7%D9%84%D8%AD%D9%85%D8%AF-%D9%84%D9%84%D9%87-%D8%AD%D9%85%D8%AF%D8%A7-%D9%83%D8%AB%D9%8A%D8%B1%D8%A7-%D9%85%D8%A8%D8%A7%D8%B1%D9%83%D8%A7-%D9%83%D9%85%D8%A7-%D9%8A%D9%86%D8%A8%D8%BA%D9%8A-activity-7289987057957892097-1a3B?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEgEX70B9gy372sfNYSfqAcQKESkuRr4O1c" target="_blank" class="text-lg/8 text-pretty text-gray-100 flex items-center gap-2 bg-blue-500 rounded-4xl px-8 py-3 hover:bg-blue-600 transition-all duration-500 ease-in-out lg:w-[50%] md:w-[50%] sm:w-full w-full justify-center text-bolded">
+                        <i class="fas fa-external-link-alt"></i>
+                        Live Demo
+                    </a>
+                    <a href="https://github.com/Farag-Sherif/Book-Store-React-JS.git" target="_blank" class="text-lg/8 text-pretty text-gray-300 flex items-center gap-2 border-1 border-gray-300 rounded-4xl px-8 py-3 hover:bg-white/10 transition-all duration-500 ease-in-out lg:w-[50%] md:w-[50%] sm:w-full w-full justify-center text-bolded">
+                        <i class="fab fa-github"></i>
+                        Source Code
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="box  bg-white/5 rounded-2xl mb-5 overflow-hidden">
+            <img src="img/projects/1.png" alt="" class="w-full h-60 object-cover object-top mb-5">
+            <div class="text px-6 py-4">
+                <h2 class="text-3xl font-semibold  text-gray-300 mb-5">Blood Bank</h2>
+                <p class="text-lg/8 text-pretty text-gray-300">Developed a blood donation platform connecting donors with blood banks, featuring real-time blood needs updates and location-based bank searches. The site offers a user-friendly interface, seamless navigation, and secure data handling for accessibility and efficiency. It raises awareness about blood donation, encouraging community participation. The platform significantly supports public health and emergency response efforts.</p>
+                <div class="tools text-blue-300 flex gap-4 items-center mt-5 flex-wrap">
+                    <span class="bg-white/20 rounded-2xl px-6 py-1">HTML</span>
+                    <span class="bg-white/20 rounded-2xl px-6 py-1">CSS</span>
+                    <span class="bg-white/20 rounded-2xl px-6 py-1">JavaScript</span>
+                    <span class="bg-white/20 rounded-2xl px-6 py-1">Animation</span>
+                    <span class="bg-white/20 rounded-2xl px-6 py-1">Responsive Design</span>
+                </div>
+                <div class="links flex gap-4 items-center mt-10 mb-5 lg:flex-nowrap md:flex-nowrap sm:flex-wrap flex-wrap">
+                    <a href="https://farag-sherif.github.io/Blood-Bank/" target="_blank" class="text-lg/8 text-pretty text-gray-100 flex items-center gap-2 bg-blue-500 rounded-4xl px-8 py-3 hover:bg-blue-600 transition-all duration-500 ease-in-out lg:w-[50%] md:w-[50%] sm:w-full w-full justify-center text-bolded">
+                        <i class="fas fa-external-link-alt"></i>
+                        Live Demo
+                    </a>
+                    <a href="https://github.com/Farag-Sherif/Blood-Bank.git" target="_blank" class="text-lg/8 text-pretty text-gray-300 flex items-center gap-2 border-1 border-gray-300 rounded-4xl px-8 py-3 hover:bg-white/10 transition-all duration-500 ease-in-out lg:w-[50%] md:w-[50%] sm:w-full w-full justify-center text-bolded">
+                        <i class="fab fa-github"></i>
+                        Source Code
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="box  bg-white/5 rounded-2xl mb-5 overflow-hidden">
+            <img src="img/projects/5.png" alt="" class="w-full h-60 object-cover object-top mb-5">
+            <div class="text px-6 py-4">
+                <h2 class="text-3xl font-semibold  text-gray-300 mb-5">it is Egypt</h2>
+                <p class="text-lg/8 text-pretty text-gray-300">
+                    Developed an interactive travel website showcasing Egypt’s beauty and culture, featuring detailed information about landmarks, traditional cuisine, and integrated videos for each attraction. Implemented a responsive design and smooth navigation to ensure an engaging user experience across all devices. The project highlights modern UI practices and delivers a visually immersive journey for users exploring Egypt online.
+                </p>
+                <div class="tools text-blue-300 flex gap-4 items-center mt-5 flex-wrap">
+                    <span class="bg-white/20 rounded-2xl px-6 py-1">HTML</span>
+                    <span class="bg-white/20 rounded-2xl px-6 py-1">CSS</span>
+                    <span class="bg-white/20 rounded-2xl px-6 py-1">JavaScript</span>
+                    <span class="bg-white/20 rounded-2xl px-6 py-1">Animation</span>
+                    <span class="bg-white/20 rounded-2xl px-6 py-1">Responsive Design</span>
+                </div>
+                <div class="links flex gap-4 items-center mt-10 mb-5 lg:flex-nowrap md:flex-nowrap sm:flex-wrap flex-wrap">
+                    <a href="https://farag-sherif.github.io/it-is-Egypt/" target="_blank" class="text-lg/8 text-pretty text-gray-100 flex items-center gap-2 bg-blue-500 rounded-4xl px-8 py-3 hover:bg-blue-600 transition-all duration-500 ease-in-out lg:w-[50%] md:w-[50%] sm:w-full w-full justify-center text-bolded">
+                        <i class="fas fa-external-link-alt"></i>
+                        Live Demo
+                    </a>
+                    <a href="https://github.com/Farag-Sherif/it-is-Egypt.git" target="_blank" class="text-lg/8 text-pretty text-gray-300 flex items-center gap-2 border-1 border-gray-300 rounded-4xl px-8 py-3 hover:bg-white/10 transition-all duration-500 ease-in-out lg:w-[50%] md:w-[50%] sm:w-full w-full justify-center text-bolded">
+                        <i class="fab fa-github"></i>
+                        Source Code
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ======================end projects====================== -->
+<!-- ======================start contact====================== -->
+<section class="contact container flex flex-col items-center gap-5 mb-15" id="contact-me">
+    <div class="header text-center mb-15">
+        <h4 class="text-2xl font-semibold tracking-tight text-balance text-gray-300">Contact Me</h4>
+        <h1 class="text-4xl font-bold tracking-tight text-balance title my-2 sm:text-4xl  md:text-5xl lg:text-6xl">Get In Touch</h1>
+        <p class="text-lg/8 text-pretty text-gray-300">My Contact is as follows:</p>
+    </div>
+    <div class="content grid gap-5 md:grid-cols-1 lg:grid-cols-2 sm:grid-cols-1 grid-cols-1">
+        <div class="info">
+            <h2 class="text-3xl font-semibold  text-gray-300 mb-5 ">Contact Information</h2>
+            <p class="text-lg/8 text-pretty text-gray-300 mb-9">
+                I am always open to discussing new projects, creative ideas, or opportunities to be part of your visions. Feel free to reach out to me through any of the platforms below.
+            </p>
+            <div class="links flex items-center gap-4 mb-5 lg:flex-nowrap md:flex-nowrap sm:flex-wrap flex-wrap">
+                <a href="mailto:farag.sherif500@gmail.com" target="_blank">
+                    <img src="img/social/icons8-gmail-50.png" alt="" class="w-8 h-8 invert">
+                </a>
+                <a href="https://www.facebook.com/farag.sherif.3?locale=ar_AR" target="_blank">
+                    <img src="img/social/icons8-facebook-50.png" alt="" class="w-8 h-8 invert">
+                </a>
+                <a href="http://linkedin.com/in/farag-mohammed-sherif-679780298" target="_blank">
+                    <img src="img/social/icons8-linkedin-50.png" alt="" class="w-8 h-8 invert">
+                </a>
+                <a href="https://wa.me/+201032195380" target="_blank">
+                    <img src="img/social/icons8-whatsapp-50.png" alt="" class="w-8 h-8 invert">
+                </a>
+            </div>
+        </div>
+        <div class="form">
+            <form action="https://formsubmit.co/farag.sherif500@gmail.com" method="POST">
+                <div class="mb-4">
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Your Name"
+                        required
+                        class="w-full px-4 py-2 rounded-lg bg-white/10 text-gray-100 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    >
+                </div>
+                <div class="mb-4">
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Your Email"
+                        required
+                        class="w-full px-4 py-2 rounded-lg bg-white/10 text-gray-100 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    >
+                </div>
+                <div class="mb-4">
+                    <textarea
+                        name="message"
+                        rows="4"
+                        placeholder="Your Message"
+                        required
+                        class="w-full px-4 py-2 rounded-lg bg-white/10 text-gray-100 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    ></textarea>
+                </div>
+                <button type="submit" class="w-full bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-all duration-500 ease-in-out">Send Message</button>
+            </form>
+        </div>
+    </div>
+</section>
+<!-- ======================end contact====================== -->
+<footer>
+    <div class="text-center py-6 text-gray-400 border-t-1">
+        &copy; 2024 Farag Sherif. All rights reserved.
+    </div>
+</footer>
+<!-- ======================background====================== -->
+<div aria-hidden="true" class="fixed inset-x-0 top-[calc(100%-40rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-40rem)]">
+    <div style="
+          clip-path: polygon(
+            74.1% 44.1%,
+            100% 61.6%,
+            97.5% 26.9%,
+            85.5% 0.1%,
+            80.7% 2%,
+            72.5% 32.5%,
+            60.2% 62.4%,
+            52.4% 68.1%,
+            47.5% 58.3%,
+            45.2% 34.5%,
+            27.5% 76.7%,
+            0.1% 64.9%,
+            17.9% 100%,
+            27.6% 76.8%,
+            76.1% 97.7%,
+            74.1% 44.1%
+          );
+        " class="relative left-[calc(50%+3rem)] aspect-1155/678 w-144.5 -translate-x-1/2 bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-288.75"></div>
+</div>
+<!-- ======================script.js====================== -->
+<script src="script.js"></script>
+</body>
+</html>
