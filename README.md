@@ -3,7 +3,7 @@
 
 📧 farag.sherif500@gmail.com  
 📞 01032195380  
-🌐 https://github.com/Farag-Sherif  
+🌐 https://farag-sherif.github.io/Farag-Sherif/  
 🔗 linkedin.com/in/farag-mohammed-sherif-679780298  
 🏠 Shebin El Kom, El Menoufia  
 
