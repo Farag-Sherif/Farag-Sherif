@@ -1,9 +1,9 @@
-//loading page
+/////////////////////////////loading page////////////////////////////
 window.addEventListener("load", function () {
   const loadingScreen = document.getElementById("loading-screen");
   loadingScreen.style.display = "none";
 });
-//text animation
+///////////////////////////////text animation///////////////////////////
 const displayText = document.querySelector(".displayText");
 const textsToDisplay = ['Frontend Developer', 'Web Designer', 'React JS Developer', 'JavaScript Lover'];
 let currentTextIndex = 0;
@@ -23,7 +23,7 @@ function displayNewText() {
 
 displayNewText();
 setInterval(displayNewText, 5000);
-//header scroll bg change
+///////////////////////////////////header scroll bg change/////////////////////////
 let currentPosition = 0;
 window.addEventListener("scroll", function () {
   let scrollPosition = window.scrollY;
@@ -45,7 +45,7 @@ window.addEventListener("scroll", function () {
 });
 
 
-// active link in header
+///////////////////////////////// active link in header///////////////////////////
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll(".links a");
 
@@ -75,7 +75,7 @@ window.addEventListener("scroll", () => {
     }
   });
 });
-//send email js
+////////////////////////////////send email js///////////////////////////////////
 function sendEmail() {
   Email.send({
     SecureToken: "f4f4e8b3-2d3c-4d0e-8c7d-6f3b8f5e6a1b",

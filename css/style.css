@@ -35,7 +35,7 @@ body::before {
 /* From Uiverse.io by NlghtM4re */
 .loader-container {
   position: absolute;
-  top: 40%;
+  top: 20%;
   height: 90%;
   display: flex;
   justify-content: center;
