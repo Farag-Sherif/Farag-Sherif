@@ -144,10 +144,6 @@ header {
   }
 
   .img {
-    background-image: url("../img/farag-1.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
     height: 100%;
     width: 100%;
     mix-blend-mode: color-dodge;
