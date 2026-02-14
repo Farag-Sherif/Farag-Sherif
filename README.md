@@ -14,15 +14,21 @@ Frontend developer with expertise in designing and developing interactive, respo
 - **2023 - Present**: Faculty of Computer and Information, El Menoufia University
 
 ## Experience
-- **Freelance Frontend Developer at Devly Solutions**  
-  *2025/9 - present*  
-  Working as a freelance frontend developer, specializing in designing and developing interactive, responsive websites and web applications using HTML5, CSS3, JavaScript, TypeScript, and frameworks like React.js, Bootstrap, and Tailwind. Contributing to client projects by creating dynamic user interfaces and enhancing user experience, while continuously learning new technologies to deliver innovative solutions as part of a dynamic team.
+- **Training at PureSoft (on site)**  
+  *2025/11 - 2025/2*  
+  specializing in designing and developing responsive and interactive web interfaces using HTML5, CSS3, JavaScript, and modern UI frameworks such as Bootstrap and Tailwind CSS.
+  Contributing to real-world projects by building clean, user-friendly layouts and improving overall user experience, while continuously enhancing my technical skills and learning best practices within a professional team environment.
   
 - **Training at GDG on Campus Canadian International College**  
   *2025/8 - 2025/4*  
   Participated in an intensive frontend development training where I learned and applied techniques in React.js, JavaScript, HTML, and CSS, which contributed to enhancing my skills in building dynamic and responsive applications.
 
 ## Projects
+- **Doctors Website**  
+  *2026/2 - 2025/11*  
+  *Description*: Developed a responsive web platform for booking doctor appointments and exploring medical services. Users can browse doctors by specialization, view contact details, search for pharmacies, laboratories, and radiology                      centers, and access full details for each facility. Built with React.js, Vite, and Tailwind CSS, focusing on clean UI, responsive design, and interactive components. 
+  *Technologies Used*: React.js, Vite, Tailwind CSS, React Router, Responsive Design, API Integration 
+
 - **Portfolio Website**  
   *2024/8 - 2024/8*  
   *Description*: Developed a responsive personal portfolio website to showcase my projects and skills. Implemented interactive UI features using JavaScript and styled with Tailwind CSS for a modern look.  
