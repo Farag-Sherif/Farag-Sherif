@@ -158,7 +158,6 @@ header {
 }
 
 .displayText {
-  display: inline-block;
   white-space: nowrap;
   overflow: hidden;
   padding-right: 5px;
