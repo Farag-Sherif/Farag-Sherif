@@ -22,7 +22,7 @@ export const personal = {
   phone: "+201032195380",
   location: "Shebin El Kom, El Menoufia",
   resumeUrl:
-    "https://drive.google.com/uc?export=download&id=1Xzgjcz-Z9lGB8NmkvcKGedvIHs2xBOYq",
+    "https://drive.google.com/uc?export=download&id=1OjeRCl_OwX25KHKB06MkirPdP3Ic2WZu",
   profileImage: "/images/profile/farag-3.png",
   social: {
     linkedin: "https://linkedin.com/in/farag-mohammed-sherif-679780298",
