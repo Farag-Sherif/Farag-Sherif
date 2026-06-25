@@ -6,7 +6,7 @@ export interface Experience {
   startDate: string;
   endDate: string;
   description: string;
-  icon: "code" | "users" | "tasks" | "briefcase";
+  icon: "code" | "users" | "tasks" ;
 }
 
 export const experiences: Experience[] = [
@@ -19,7 +19,7 @@ export const experiences: Experience[] = [
     endDate: "Present",
     description:
       "Worked on developing and modernizing client web applications using React and modern frontend technologies. Enhanced UI/UX, implemented multilingual Arabic/English support with seamless RTL/LTR switching, integrated REST APIs, improved responsiveness and performance, and delivered scalable, production-ready solutions for real-world business requirements.",
-    icon: "briefcase",
+    icon: "code",
   },
   {
     id: "puresoft",
@@ -60,7 +60,7 @@ export interface Service {
   id: string;
   title: string;
   description: string;
-  icon: "code" | "design" | "management" | "briefcase";
+  icon: "code" | "design" | "management";
 }
 
 export const services: Service[] = [
