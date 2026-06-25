@@ -6,7 +6,7 @@ export interface Experience {
   startDate: string;
   endDate: string;
   description: string;
-  icon: "code" | "users" | "tasks";
+  icon: "code" | "users" | "tasks" | "briefcase";
 }
 
 export const experiences: Experience[] = [
@@ -60,7 +60,7 @@ export interface Service {
   id: string;
   title: string;
   description: string;
-  icon: "code" | "design" | "management";
+  icon: "code" | "design" | "management" | "briefcase";
 }
 
 export const services: Service[] = [
