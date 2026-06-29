@@ -6,7 +6,7 @@
 📱 +20 103 219 5380
 📍 Shebin El Kom, Menoufia, Egypt
 
-🔗 Portfolio: https://farag-sherif.netlify.app/
+🔗 Portfolio: https://farag-sherif.vercel.app/
 🔗 LinkedIn: https://linkedin.com/in/farag-mohammed-sherif-679780298
 🔗 GitHub: https://github.com/Farag-Sherif
 
