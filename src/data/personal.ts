@@ -39,7 +39,7 @@ export const personal = {
   },
   stats: {
     yearsExperience: 2,
-    projectsCompleted: 15,
+    projectsCompleted: 25,
     technologies: 13,
     professionalRoles: 4,
   },

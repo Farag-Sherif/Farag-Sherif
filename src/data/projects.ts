@@ -12,6 +12,30 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "Albarq-Alsarea",
+    title: "Albarq Alsarea Restaurant Platform",
+    description:
+      "Enhanced the user experience of a bilingual (Arabic/English) restaurant ordering platform by redesigning the restaurant categories, filters, and search experience. Optimized category logic to automatically hide empty categories with no available restaurants and dynamically sort categories by restaurant count, making navigation faster and more relevant. Redesigned the category cards, dish categories section, filter sidebar, and restaurant browsing interface while maintaining full responsiveness. Implemented a global header search for quick restaurant discovery, improved filtering performance, and delivered a cleaner, more intuitive UI for both desktop and mobile users.",
+    image: "/images/projects/12.png",
+    techStack: [
+      "React JS",
+      "Tailwind CSS",
+      "JavaScript",
+      "REST API",
+      "Axios",
+      "Responsive Design",
+      "UI/UX Redesign",
+      "Dynamic Filtering",
+      "Search Optimization",
+      "Performance Optimization",
+      "i18n",
+    ],
+    liveUrl: "https://albarqalsarea.shop/home",
+    githubUrl: "",
+    category: "react",
+    featured: true,
+  },
+  {
     id: "Invitations",
     title: "Invitations",
     description:
@@ -111,7 +135,7 @@ export const projects: Project[] = [
       "API",
       "Responsive Design",
     ],
-    liveUrl: "https://ayat-website.netlify.app/",
+    liveUrl: "https://ayat-website-iota.vercel.app/",
     githubUrl: "https://github.com/Farag-Sherif/Ayat-Website.git",
     category: "react",
     featured: true,
