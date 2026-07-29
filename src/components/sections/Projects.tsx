@@ -154,30 +154,33 @@ const Projects = () => {
   );
 
   useLayoutEffect(() => {
-    // If not enough items or mobile view, disable GSAP horizontal scroll
-    if (!sectionRef.current || !trackRef.current || window.innerWidth < 768) return;
+    if (!sectionRef.current || !trackRef.current) return;
 
     const ctx = gsap.context(() => {
-      const scrollTrack = trackRef.current;
-      if (!scrollTrack) return;
-      
-      const scrollWidth = scrollTrack.scrollWidth;
-      const amountToScroll = scrollWidth - window.innerWidth;
+      let mm = gsap.matchMedia();
 
-      if (amountToScroll > 0) {
-        gsap.to(scrollTrack, {
-          x: -amountToScroll,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'center center',
-            end: `+=${amountToScroll}`,
-            pin: true,
-            scrub: 1,
-            invalidateOnRefresh: true,
-          },
-        });
-      }
+      mm.add("(min-width: 768px)", () => {
+        const scrollTrack = trackRef.current;
+        if (!scrollTrack) return;
+        
+        const scrollWidth = scrollTrack.scrollWidth;
+        const amountToScroll = scrollWidth - window.innerWidth;
+
+        if (amountToScroll > 0) {
+          gsap.to(scrollTrack, {
+            x: -amountToScroll,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: 'center center',
+              end: `+=${amountToScroll}`,
+              pin: true,
+              scrub: 1,
+              invalidateOnRefresh: true,
+            },
+          });
+        }
+      });
     }, sectionRef);
 
     return () => ctx.revert();

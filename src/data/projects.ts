@@ -6,11 +6,53 @@ export interface Project {
   techStack: string[];
   liveUrl: string;
   githubUrl: string;
-  category: 'react' | 'fullstack' | 'frontend';
+  category: 'react' | 'fullstack' | 'frontend' | 'UI/UX' | 'other';
   featured: boolean;
 }
 
 export const projects: Project[] = [
+  {
+    id: "doctors",
+    title: "Doctors Website",
+    description:
+      "Developed a responsive and modern doctors appointment platform using React.js, Vite, and Tailwind CSS. Users can browse doctors by specialization, view contact details, and book appointments online. The platform also provides search functionality for pharmacies, laboratories, and radiology centers.",
+    image: "/images/projects/7.png",
+    techStack: [
+      "React JS",
+      "Tailwind CSS",
+      "Vite",
+      "JavaScript",
+      "Responsive Design",
+    ],
+    liveUrl: "",
+    githubUrl: "",
+    category: "react",
+    featured: true,
+  },
+  {
+    id: "Caller-CRM",
+    title: "Caller Information & CRM Mobile App UI",
+    description:
+      "Designed a complete Android CRM application that automatically identifies callers and displays their profile during incoming calls. Created a full design system including authentication, dashboard, customer details, search, call history, notes management, and live calling interfaces. Prioritized fast information access for customer support agents through clear visual hierarchy, reusable components, and intuitive navigation while maintaining a modern, responsive mobile experience.",
+    image: "/images/projects/14.png",
+    techStack: [
+      "Figma",
+      "UI/UX Design",
+      "Mobile Design",
+      "Android",
+      "Design System",
+      "Auto Layout",
+      "Components",
+      "Prototyping",
+      "Wireframing",
+      "User Flow",
+    ],
+    liveUrl:
+      "https://www.figma.com/design/2QmfCWkdeACiA8SquLeEFp/Untitled?node-id=2-33&t=5T3PeWpcNm7Z2RVd-1",
+    githubUrl: "",
+    category: "UI/UX",
+    featured: true,
+  },
   {
     id: "Albarq-Alsarea",
     title: "Albarq Alsarea Restaurant Platform",
@@ -137,24 +179,6 @@ export const projects: Project[] = [
     ],
     liveUrl: "https://ayat-website-iota.vercel.app/",
     githubUrl: "https://github.com/Farag-Sherif/Ayat-Website.git",
-    category: "react",
-    featured: true,
-  },
-  {
-    id: "doctors",
-    title: "Doctors Website",
-    description:
-      "Developed a responsive and modern doctors appointment platform using React.js, Vite, and Tailwind CSS. Users can browse doctors by specialization, view contact details, and book appointments online. The platform also provides search functionality for pharmacies, laboratories, and radiology centers.",
-    image: "/images/projects/7.png",
-    techStack: [
-      "React JS",
-      "Tailwind CSS",
-      "Vite",
-      "JavaScript",
-      "Responsive Design",
-    ],
-    liveUrl: "",
-    githubUrl: "",
     category: "react",
     featured: true,
   },
