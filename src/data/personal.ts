@@ -9,12 +9,12 @@ export const personal = {
     "JavaScript Lover",
     "Software Engineer",
   ],
-  bio: `Frontend Developer building modern, scalable, and high-performance web applications with React.js and TypeScript.`,
+  bio: `React Frontend Developer specializing in React.js, TypeScript, REST API integration, reusable UI components, and responsive web applications.`,
 
   about: [
     `I specialize in creating modern web experiences using React.js, TypeScript, Next.js, and contemporary frontend technologies. My focus is on building scalable, maintainable, and responsive applications that combine excellent performance with intuitive user experiences.`,
 
-    `I have worked on commercial projects ranging from healthcare and e-commerce platforms to multilingual corporate websites, implementing advanced features such as state management, API integrations, dynamic localization, and responsive UI architectures.`,
+    `I have worked on commercial projects ranging from healthcare and e-commerce platforms to multilingual corporate websites, implementing advanced features such as state management, API integrations, dynamic localization, and responsive UI architectures. I am passionate about writing clean, efficient code and continuously learning new technologies to stay at the forefront of web development.`,
 
     `As a Computer Science student and continuous learner, I am passionate about writing clean code, solving complex problems, and delivering products that make a real impact. I enjoy collaborating with teams, learning new technologies, and turning ideas into polished digital experiences.`,
   ],
