@@ -9,6 +9,7 @@ import Footer from './components/layout/Footer';
 import CustomCursor from './components/effects/CustomCursor';
 import SmoothScroll from './components/effects/SmoothScroll';
 import Hero from './components/sections/Hero';
+import ScrollFrameAnimation from './components/ScrollFrameAnimation';
 
 // Lazy load heavy sections for performance
 const HeroScene = lazy(() => import('./components/3d/HeroScene'));
@@ -54,12 +55,12 @@ export default function App() {
 
       {(!isLoading || showContent) && (
         <>
-          {/* Global 3D Background */}
-          <div className="fixed inset-0 z-0 pointer-events-auto">
-            <Suspense fallback={null}>
-              <HeroScene />
-            </Suspense>
-          </div>
+          {/* Global Cinematic Scroll Background */}
+          <ScrollFrameAnimation 
+            framesPath="/images/3d-bg" 
+            globalBackground={true}
+            preloadCount={30} 
+          />
 
           <ScrollProgress />
           <Navbar />
