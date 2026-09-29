@@ -20,7 +20,7 @@ const SectionHeading = memo(function SectionHeading({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-50px' }}
         transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-        className="text-sm uppercase tracking-[0.2em] text-violet-400 font-medium mb-4"
+        className="text-sm uppercase tracking-[0.2em] text-amber-400 font-medium mb-4"
       >
         {subtitle}
       </motion.p>
@@ -67,7 +67,7 @@ const SectionHeading = memo(function SectionHeading({
           delay: 0.3,
           ease: [0.16, 1, 0.3, 1],
         }}
-        className="mx-auto mt-8 h-px w-24 bg-gradient-to-r from-transparent via-violet-500 to-transparent origin-center"
+        className="mx-auto mt-8 h-px w-24 bg-gradient-to-r from-transparent via-orange-500 to-transparent origin-center"
       />
     </div>
   );

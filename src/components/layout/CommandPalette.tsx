@@ -122,7 +122,7 @@ export default function CommandPalette() {
                     className="group flex w-full items-center justify-between rounded-xl px-4 py-3 text-sm text-slate-300 transition-colors hover:bg-white/5 hover:text-white"
                   >
                     <div className="flex items-center gap-3">
-                      <HiCommandLine className="h-4 w-4 text-violet-400" />
+                      <HiCommandLine className="h-4 w-4 text-amber-400" />
                       <span>{cmd.title}</span>
                     </div>
                     <HiArrowRight className="h-4 w-4 opacity-0 transition-opacity group-hover:opacity-100" />

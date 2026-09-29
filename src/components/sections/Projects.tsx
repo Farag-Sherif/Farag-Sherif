@@ -1,251 +1,194 @@
-import { useState, useCallback, useRef, memo, useLayoutEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { memo } from 'react';
+import { motion } from 'framer-motion';
 import { HiArrowTopRightOnSquare } from 'react-icons/hi2';
 import { SiGithub } from 'react-icons/si';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { projects, projectCategories, type Project } from '../../data/projects';
-import SectionHeading from '../ui/SectionHeading';
+import { projects, type Project } from '../../data/projects';
+import { ProjectImage } from '../ui/ProjectImage';
 
-gsap.registerPlugin(ScrollTrigger);
-
-/* ─── Project Card with 3D tilt ─── */
-const ProjectCard = memo(function ProjectCard({
-  project,
-  index,
-}: {
-  project: Project;
-  index: number;
-}) {
-  const cardRef = useRef<HTMLDivElement>(null);
-  const [tilt, setTilt] = useState({ x: 0, y: 0 });
-  const [isHovered, setIsHovered] = useState(false);
-
-  const hasLiveUrl = project.liveUrl && project.liveUrl.trim() !== "" && project.liveUrl !== "YOUR_LIVE_URL";
-  const hasGithubUrl = project.githubUrl && project.githubUrl.trim() !== "" && project.githubUrl !== "YOUR_GITHUB_URL";
-
-  const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
-    if (!cardRef.current) return;
-    const rect = cardRef.current.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-    const rotateX = ((y - centerY) / centerY) * -10;
-    const rotateY = ((x - centerX) / centerX) * 10;
-    setTilt({ x: rotateX, y: rotateY });
-  }, []);
-
-  const handleMouseEnter = useCallback(() => setIsHovered(true), []);
-
-  const handleMouseLeave = useCallback(() => {
-    setIsHovered(false);
-    setTilt({ x: 0, y: 0 });
-  }, []);
+const ProjectDisplay = memo(function ProjectDisplay({ project, index }: { project: Project; index: number }) {
+  const num = String(index + 1).padStart(2, '0');
+  const isFullWidth = index % 3 === 0;
+  const isSplit = index % 3 === 1;
+  const isAsymmetrical = index % 3 === 2;
 
   return (
-    <motion.article
-      layout
-      initial={{ opacity: 0, y: 40 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, scale: 0.95, y: 20 }}
-      transition={{
-        duration: 0.5,
-        delay: index * 0.1,
-        layout: { duration: 0.4 },
-      }}
-    >
-      <div
-        ref={cardRef}
-        onMouseMove={handleMouseMove}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        className="group relative overflow-hidden rounded-2xl border border-white/[0.06] bg-white/[0.03] backdrop-blur-xl
-                   transition-colors duration-300 hover:border-white/[0.12] hover:bg-white/[0.06] flex flex-col h-full"
-        style={{
-          transform: `perspective(1000px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`,
-          transition: isHovered
-            ? 'transform 0.1s ease-out'
-            : 'transform 0.5s cubic-bezier(0.23, 1, 0.32, 1)',
-        }}
-      >
-        {/* Image */}
-        <div className="relative h-48 sm:h-56 overflow-hidden flex-shrink-0">
-          <img
-            src={project.image}
-            alt={project.title}
-            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-            loading="lazy"
-          />
-        </div>
-
-        {/* Content */}
-        <div className="p-5 sm:p-6 flex flex-col flex-grow">
-          <h3 className="font-heading text-xl sm:text-2xl font-bold text-white">{project.title}</h3>
-          <p className="mt-2 line-clamp-3 text-xs sm:text-sm leading-relaxed text-slate-400 font-body flex-grow">
-            {project.description}
-          </p>
-
-          {/* Tech stack pills */}
-          <div className="mt-4 flex flex-wrap gap-2">
-            {project.techStack.map((tech) => (
-              <span
-                key={tech}
-                className="rounded-full border border-violet-500/20 bg-violet-500/10
-                           px-3 py-1 text-xs font-medium text-violet-300"
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
-
-          {/* Bottom buttons */}
-          <div className="mt-5 flex gap-3">
-            {hasLiveUrl || hasGithubUrl ? (
-              <>
-                {hasLiveUrl && (
-                  <a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex flex-1 items-center justify-center gap-2 rounded-xl
-                               bg-gradient-to-r from-violet-500 to-cyan-500
-                               px-4 py-2.5 text-sm font-semibold text-white
-                               shadow-lg shadow-violet-500/25"
-                  >
-                    <HiArrowTopRightOnSquare className="text-base" />
-                    Live Demo
-                  </a>
-                )}
-                {hasGithubUrl && (
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex flex-1 items-center justify-center gap-2 rounded-xl
-                               border border-white/20 bg-white/5
-                               px-4 py-2.5 text-sm font-semibold text-white"
-                  >
-                    <SiGithub className="text-base" />
-                    Code
-                  </a>
-                )}
-              </>
-            ) : (
-              <div className="flex w-full items-center justify-center rounded-xl border border-white/5 bg-white/[0.02] px-4 py-2.5 text-sm font-bold tracking-widest text-slate-500 opacity-70 cursor-not-allowed">
-                SOON
-              </div>
-            )}
-          </div>
-        </div>
+    <div className="relative w-full py-16 lg:py-32 border-t border-[#151515]/10">
+      <div className="absolute top-0 right-0 -translate-y-1/2 md:translate-y-0 md:top-8 md:right-8 opacity-10 pointer-events-none">
+        <span className="text-[12rem] lg:text-[20rem] font-bold leading-none tracking-tighter text-[#151515]">
+          {num}
+        </span>
       </div>
-    </motion.article>
+
+      <div className="relative z-10 grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-16">
+        {isFullWidth && (
+          <>
+            <div className="md:col-span-12 space-y-6">
+              <h3 className="text-4xl lg:text-7xl font-bold uppercase tracking-tight text-[#151515]">
+                {project.title}
+              </h3>
+              <div className="w-full h-[400px] lg:h-[700px] overflow-hidden bg-[#151515]/5">
+                {project.image ? (
+                  <ProjectImage src={project.image} alt={project.title} />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center text-[#151515]/30 uppercase text-xl font-medium tracking-widest">Image Unavailable</div>
+                )}
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4">
+                <p className="text-lg lg:text-xl text-[#151515]/80 leading-relaxed font-light">
+                  {project.description}
+                </p>
+                <div className="space-y-6 md:pl-12">
+                  <div>
+                    <h4 className="text-sm font-bold uppercase tracking-widest text-[#C85A3E] mb-3">Tech Stack</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {project.techStack.map((tech) => (
+                        <span key={tech} className="px-3 py-1 border border-[#151515] text-[#151515] text-sm uppercase tracking-wider">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="flex gap-6">
+                    {project.liveUrl && (
+                      <a href={project.liveUrl} target="_blank" rel="noreferrer" data-cursor-text="VIEW" className="flex items-center gap-2 text-[#151515] font-semibold uppercase tracking-wider hover:text-[#C85A3E] transition-colors">
+                        Live Site <HiArrowTopRightOnSquare className="text-xl" />
+                      </a>
+                    )}
+                    {project.githubUrl && (
+                      <a href={project.githubUrl} target="_blank" rel="noreferrer" className="flex items-center gap-2 text-[#151515] font-semibold uppercase tracking-wider hover:text-[#C85A3E] transition-colors">
+                        Repository <SiGithub className="text-xl" />
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </>
+        )}
+
+        {isSplit && (
+          <>
+            <div className="md:col-span-6 space-y-8 flex flex-col justify-center">
+              <h3 className="text-4xl lg:text-6xl font-bold uppercase tracking-tight text-[#151515]">
+                {project.title}
+              </h3>
+              <p className="text-lg text-[#151515]/80 leading-relaxed font-light">
+                {project.description}
+              </p>
+              <div>
+                <h4 className="text-sm font-bold uppercase tracking-widest text-[#C85A3E] mb-3">Tech Stack</h4>
+                <div className="flex flex-wrap gap-2">
+                  {project.techStack.map((tech) => (
+                    <span key={tech} className="px-3 py-1 border border-[#151515] text-[#151515] text-sm uppercase tracking-wider">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div className="flex gap-6 pt-4">
+                {project.liveUrl && (
+                  <a href={project.liveUrl} target="_blank" rel="noreferrer" className="flex items-center gap-2 text-[#151515] font-semibold uppercase tracking-wider hover:text-[#C85A3E] transition-colors">
+                    Live Site <HiArrowTopRightOnSquare className="text-xl" />
+                  </a>
+                )}
+                {project.githubUrl && (
+                  <a href={project.githubUrl} target="_blank" rel="noreferrer" className="flex items-center gap-2 text-[#151515] font-semibold uppercase tracking-wider hover:text-[#C85A3E] transition-colors">
+                    Repository <SiGithub className="text-xl" />
+                  </a>
+                )}
+              </div>
+            </div>
+            <div className="md:col-span-6 h-[400px] lg:h-[600px] bg-[#151515]/5 overflow-hidden">
+              {project.image ? (
+                <ProjectImage src={project.image} alt={project.title} />
+              ) : (
+                <div className="w-full h-full flex items-center justify-center text-[#151515]/30 uppercase text-xl font-medium tracking-widest">Image Unavailable</div>
+              )}
+            </div>
+          </>
+        )}
+
+        {isAsymmetrical && (
+          <>
+            <div className="md:col-span-4 md:order-last space-y-8">
+              <h3 className="text-3xl lg:text-5xl font-bold uppercase tracking-tight text-[#151515]">
+                {project.title}
+              </h3>
+              <p className="text-base text-[#151515]/80 leading-relaxed font-light">
+                {project.description}
+              </p>
+              <div>
+                <h4 className="text-sm font-bold uppercase tracking-widest text-[#C85A3E] mb-3">Tech Stack</h4>
+                <div className="flex flex-wrap gap-2">
+                  {project.techStack.map((tech) => (
+                    <span key={tech} className="text-xs font-bold uppercase tracking-widest text-[#151515]">
+                      {tech} {`//`}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div className="flex flex-col gap-4 pt-4">
+                {project.liveUrl && (
+                  <a href={project.liveUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-[#151515] font-semibold uppercase tracking-wider hover:text-[#C85A3E] transition-colors">
+                    Live Site <HiArrowTopRightOnSquare className="text-xl" />
+                  </a>
+                )}
+                {project.githubUrl && (
+                  <a href={project.githubUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-[#151515] font-semibold uppercase tracking-wider hover:text-[#C85A3E] transition-colors">
+                    Repository <SiGithub className="text-xl" />
+                  </a>
+                )}
+              </div>
+            </div>
+            <div className="md:col-span-8 md:order-first h-[300px] lg:h-[500px] bg-[#151515]/5 overflow-hidden">
+              {project.image ? (
+                <ProjectImage src={project.image} alt={project.title} />
+              ) : (
+                <div className="w-full h-full flex items-center justify-center text-[#151515]/30 uppercase text-xl font-medium tracking-widest">Image Unavailable</div>
+              )}
+            </div>
+          </>
+        )}
+      </div>
+    </div>
   );
 });
 
-/* ─── Projects Section ─── */
-const Projects = () => {
-  const [activeCategory, setActiveCategory] = useState<string>('all');
-  const sectionRef = useRef<HTMLElement>(null);
-  const trackRef = useRef<HTMLDivElement>(null);
-
-  const filteredProjects = projects.filter(
-    (p) => activeCategory === 'all' || p.category === activeCategory,
-  );
-
-  useLayoutEffect(() => {
-    if (!sectionRef.current || !trackRef.current) return;
-
-    const ctx = gsap.context(() => {
-      let mm = gsap.matchMedia();
-
-      mm.add("(min-width: 768px)", () => {
-        const scrollTrack = trackRef.current;
-        if (!scrollTrack) return;
-        
-        const scrollWidth = scrollTrack.scrollWidth;
-        const amountToScroll = scrollWidth - window.innerWidth;
-
-        if (amountToScroll > 0) {
-          gsap.to(scrollTrack, {
-            x: -amountToScroll,
-            ease: 'none',
-            scrollTrigger: {
-              trigger: sectionRef.current,
-              start: 'center center',
-              end: `+=${amountToScroll}`,
-              pin: true,
-              scrub: 1,
-              invalidateOnRefresh: true,
-            },
-          });
-        }
-      });
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, [filteredProjects]);
-
+export default function Projects() {
+  const featuredProjects = projects.filter(p => p.featured);
+  
   return (
-    <section id="projects" ref={sectionRef} className="relative min-h-[100dvh] flex flex-col justify-center pt-16 pb-32 md:pt-20 md:pb-80 overflow-hidden">
-      <div className="mx-auto max-w-7xl px-6 md:px-12 lg:px-20 mb-6 md:mb-8 w-full">
-        <SectionHeading subtitle="My Works" title="Featured Projects" />
-
-        {/* Filter Tabs */}
+    <section id="projects" className="bg-[#F4F0E8] text-[#151515] py-24 lg:py-48 px-6 lg:px-12 relative overflow-hidden">
+      <div className="max-w-screen-2xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="mb-12 flex flex-wrap justify-center gap-3"
+          transition={{ duration: 0.8 }}
+          className="mb-32"
         >
-          {projectCategories.map((cat) => (
-            <button
-              key={cat.key}
-              onClick={() => setActiveCategory(cat.key)}
-              className={`relative rounded-full px-6 py-2.5 text-sm font-semibold transition-colors duration-300
-                ${
-                  activeCategory === cat.key
-                    ? 'text-white'
-                    : 'text-slate-400 hover:text-white border border-white/10 bg-white/[0.03]'
-                }`}
-            >
-              {activeCategory === cat.key && (
-                <motion.div
-                  layoutId="activeProjectTab"
-                  className="absolute inset-0 rounded-full bg-gradient-to-r from-violet-500 to-cyan-500 shadow-lg shadow-violet-500/25"
-                  transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-                />
-              )}
-              <span className="relative z-10">{cat.label}</span>
-            </button>
-          ))}
+          <h2 className="text-6xl lg:text-[8rem] font-bold uppercase tracking-tighter leading-none mb-6 text-[#151515]">
+            Selected <br/> Works.
+          </h2>
+          <p className="text-xl lg:text-3xl max-w-2xl font-light text-[#151515]/70">
+            A curated collection of projects demonstrating expertise in frontend engineering, architectural design, and digital experiences.
+          </p>
         </motion.div>
 
-        {/* Projects Container: Vertical on mobile, Horizontal GSAP on desktop */}
-        <div 
-          ref={trackRef} 
-          className="flex flex-col md:flex-row gap-8 md:w-max"
-        >
-          <AnimatePresence mode="popLayout">
-            {filteredProjects.map((project, i) => (
-              <motion.div 
-                layout
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.8 }}
-                transition={{ duration: 0.5 }}
-                key={project.id} 
-                className="w-full md:w-[600px] flex-shrink-0"
-              >
-                <ProjectCard project={project} index={i} />
-              </motion.div>
-            ))}
-          </AnimatePresence>
+        <div className="flex flex-col">
+          {featuredProjects.map((project, idx) => (
+            <motion.div
+              key={project.id}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8 }}
+            >
+              <ProjectDisplay project={project} index={idx} />
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
   );
-};
-
-export default Projects;
+}

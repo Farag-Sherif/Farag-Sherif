@@ -36,7 +36,7 @@ function SkillWord({ position, children, color }: { position: THREE.Vector3; chi
     <Text
       ref={ref}
       position={position}
-      color={hovered ? color : '#94a3b8'}
+      color={hovered ? color : '#151515'}
       fontSize={hovered ? 1.2 : 0.8}
       font="https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfMZhrib2Bg-4.ttf"
       anchorX="center"
@@ -51,7 +51,7 @@ function SkillWord({ position, children, color }: { position: THREE.Vector3; chi
         document.body.style.cursor = 'auto';
       }}
       outlineWidth={0.02}
-      outlineColor="#000000"
+      outlineColor="#ffffff"
     >
       {children}
     </Text>
@@ -87,7 +87,7 @@ export default function SkillsSphere() {
   return (
     <div className="h-[400px] w-full md:h-[600px] cursor-grab active:cursor-grabbing">
       <Canvas camera={{ position: [0, 0, 18], fov: 60 }} dpr={[1, 2]}>
-        <fog attach="fog" args={['#030712', 10, 30]} />
+        <fog attach="fog" args={['#F4F0E8', 10, 30]} />
         <ambientLight intensity={1} />
         <SphereCloud />
         <TrackballControls noZoom noPan dynamicDampingFactor={0.1} />

@@ -12,10 +12,28 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: "doctors",
-    title: "Doctors Website",
+    id: "ovenza",
+    title: "Ovenza 3D Platform",
     description:
-      "Developed a responsive and modern doctors appointment platform using React.js, Vite, and Tailwind CSS. Users can browse doctors by specialization, view contact details, and book appointments online. The platform also provides search functionality for pharmacies, laboratories, and radiology centers.",
+      "Developed an interactive 3D web experience for product display using React, TypeScript, Tailwind CSS, and Three.js. Built a simple, highly engaging, and visually appealing user interface with blueprint architecture to showcase products elegantly.",
+    image: "", // Needs image path
+    techStack: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Three.js",
+      "Blueprint",
+    ],
+    liveUrl: "",
+    githubUrl: "",
+    category: "frontend",
+    featured: true,
+  },
+  {
+    id: "doctors",
+    title: "Doctor AI",
+    description:
+      "Developed a responsive and modern healthcare AI platform using React.js, Vite, and Tailwind CSS. The platform integrates intelligent healthcare features and provides a seamless user experience across devices.",
     image: "/images/projects/7.png",
     techStack: [
       "React JS",
@@ -195,7 +213,7 @@ export const projects: Project[] = [
       "Authentication",
       "Responsive Design",
     ],
-    liveUrl: "https://movie-project-react-js.netlify.app/",
+    liveUrl: "",
     githubUrl: "https://github.com/Farag-Sherif/Movie-Project.git",
     category: "react",
     featured: true,
@@ -207,7 +225,7 @@ export const projects: Project[] = [
       "Collaborated with a team to develop a real estate platform showcasing premium villas and apartments, featuring detailed property listings and responsive design. Includes a secure login system, smooth navigation, and an advanced admin dashboard for managing bookings and properties.",
     image: "/images/projects/6.png",
     techStack: ["React JS", "Bootstrap", "JavaScript", "API", "Authentication"],
-    liveUrl: "https://mohamedabuzahda.github.io/Real-State/",
+    liveUrl: "",
     githubUrl: "https://github.com/mohamedabuzahda/Real-State.git",
     category: "fullstack",
     featured: true,
@@ -225,33 +243,9 @@ export const projects: Project[] = [
       "Authentication",
       "Responsive Design",
     ],
-    liveUrl: "https://github.com/Farag-Sherif/Book-Store-React-JS",
+    liveUrl: "",
     githubUrl: "https://github.com/Farag-Sherif/Book-Store-React-JS.git",
     category: "fullstack",
-    featured: false,
-  },
-  {
-    id: "bloodbank",
-    title: "Blood Bank",
-    description:
-      "Developed a blood donation platform connecting donors with blood banks, featuring real-time blood needs updates and location-based bank searches. The site offers a user-friendly interface, seamless navigation, and secure data handling for accessibility and efficiency.",
-    image: "/images/projects/1.png",
-    techStack: ["HTML", "CSS", "JavaScript", "Responsive Design"],
-    liveUrl: "https://farag-sherif.github.io/Blood-Bank/",
-    githubUrl: "https://github.com/Farag-Sherif/Blood-Bank.git",
-    category: "frontend",
-    featured: false,
-  },
-  {
-    id: "egypt",
-    title: "It is Egypt",
-    description:
-      "Developed an interactive travel website showcasing Egypt's beauty and culture, featuring detailed information about landmarks, traditional cuisine, and integrated videos for each attraction. Implements responsive design and smooth navigation for an engaging user experience.",
-    image: "/images/projects/5.png",
-    techStack: ["HTML", "CSS", "JavaScript", "Responsive Design"],
-    liveUrl: "https://farag-sherif.github.io/it-is-Egypt/",
-    githubUrl: "https://github.com/Farag-Sherif/it-is-Egypt.git",
-    category: "frontend",
     featured: false,
   },
 ];

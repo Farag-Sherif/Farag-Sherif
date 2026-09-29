@@ -1,14 +1,15 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
 
-const SPRING_CONFIG = { damping: 25, stiffness: 250, mass: 0.5 };
-const RING_SPRING_CONFIG = { damping: 20, stiffness: 150, mass: 0.8 };
+const SPRING_CONFIG = { damping: 25, stiffness: 350, mass: 0.2 };
+const SLOW_SPRING = { damping: 30, stiffness: 200, mass: 0.5 };
 
 const INTERACTIVE_SELECTORS =
   'a, button, [role="button"], input, textarea, select, [data-cursor-hover]';
 
 const CustomCursor: React.FC = () => {
   const [isHovering, setIsHovering] = useState(false);
+  const [hoverText, setHoverText] = useState('');
   const [isVisible, setIsVisible] = useState(false);
   const [isTouchDevice, setIsTouchDevice] = useState(true);
 
@@ -18,8 +19,8 @@ const CustomCursor: React.FC = () => {
   const dotX = useSpring(cursorX, SPRING_CONFIG);
   const dotY = useSpring(cursorY, SPRING_CONFIG);
 
-  const ringX = useSpring(cursorX, RING_SPRING_CONFIG);
-  const ringY = useSpring(cursorY, RING_SPRING_CONFIG);
+  const ringX = useSpring(cursorX, SLOW_SPRING);
+  const ringY = useSpring(cursorY, SLOW_SPRING);
 
   useEffect(() => {
     const isTouch =
@@ -39,8 +40,15 @@ const CustomCursor: React.FC = () => {
 
   const handleMouseOver = useCallback((event: MouseEvent) => {
     const target = event.target as HTMLElement;
-    if (target.closest(INTERACTIVE_SELECTORS)) {
+    const interactiveEl = target.closest(INTERACTIVE_SELECTORS);
+    if (interactiveEl) {
       setIsHovering(true);
+      const text = interactiveEl.getAttribute('data-cursor-text');
+      if (text) {
+        setHoverText(text);
+      } else {
+        setHoverText('');
+      }
     }
   }, []);
 
@@ -48,6 +56,7 @@ const CustomCursor: React.FC = () => {
     const target = event.target as HTMLElement;
     if (target.closest(INTERACTIVE_SELECTORS)) {
       setIsHovering(false);
+      setHoverText('');
     }
   }, []);
 
@@ -94,9 +103,34 @@ const CustomCursor: React.FC = () => {
 
   return (
     <>
-      {/* Main dot */}
       <motion.div
-        className="fixed top-0 left-0 rounded-full pointer-events-none"
+        className="fixed top-0 left-0 rounded-full pointer-events-none mix-blend-difference flex items-center justify-center"
+        style={{
+          x: ringX,
+          y: ringY,
+          width: 48,
+          height: 48,
+          translateX: '-50%',
+          translateY: '-50%',
+          zIndex: 9998,
+          backgroundColor: isHovering && hoverText ? '#F4F0E8' : 'transparent',
+          border: isHovering && !hoverText ? '1px solid #151515' : '1px solid transparent',
+        }}
+        animate={{
+          scale: isHovering ? (hoverText ? 1.5 : 1.2) : 1,
+          opacity: isVisible ? 1 : 0,
+        }}
+        transition={{ duration: 0.2, ease: 'easeOut' }}
+      >
+        {isHovering && hoverText && (
+          <span className="text-[#151515] text-[8px] font-medium tracking-widest uppercase">
+            {hoverText}
+          </span>
+        )}
+      </motion.div>
+
+      <motion.div
+        className="fixed top-0 left-0 rounded-full pointer-events-none mix-blend-difference"
         style={{
           x: dotX,
           y: dotY,
@@ -105,60 +139,13 @@ const CustomCursor: React.FC = () => {
           translateX: '-50%',
           translateY: '-50%',
           zIndex: 9999,
-          backgroundColor: '#8B5CF6',
-          boxShadow: '0 0 12px rgba(139, 92, 246, 0.8)',
+          backgroundColor: '#F4F0E8',
         }}
         animate={{
-          scale: isHovering ? 2.5 : 1,
+          scale: isHovering ? 0 : 1,
           opacity: isVisible ? 1 : 0,
         }}
-        transition={{ duration: 0.2, ease: 'easeOut' }}
-      />
-
-      {/* Trailing ring */}
-      <motion.div
-        className="fixed top-0 left-0 rounded-full pointer-events-none"
-        style={{
-          x: ringX,
-          y: ringY,
-          width: 40,
-          height: 40,
-          translateX: '-50%',
-          translateY: '-50%',
-          zIndex: 9998,
-          border: '1.5px solid transparent',
-          backgroundClip: 'padding-box',
-          backgroundImage:
-            'linear-gradient(#030712, #030712), linear-gradient(135deg, #8B5CF6, #06B6D4, #F43F5E)',
-          backgroundOrigin: 'border-box',
-        }}
-        animate={{
-          scale: isHovering ? 1.8 : 1,
-          opacity: isVisible ? 0.6 : 0,
-        }}
-        transition={{ duration: 0.3, ease: 'easeOut' }}
-      />
-
-      {/* Gradient ring using a pseudo-element approach with an additional element */}
-      <motion.div
-        className="fixed top-0 left-0 rounded-full pointer-events-none"
-        style={{
-          x: ringX,
-          y: ringY,
-          width: 40,
-          height: 40,
-          translateX: '-50%',
-          translateY: '-50%',
-          zIndex: 9997,
-          background:
-            'linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(6, 182, 212, 0.1), rgba(244, 63, 94, 0.1))',
-          filter: 'blur(8px)',
-        }}
-        animate={{
-          scale: isHovering ? 2.2 : 1,
-          opacity: isVisible ? 0.5 : 0,
-        }}
-        transition={{ duration: 0.35, ease: 'easeOut' }}
+        transition={{ duration: 0.15, ease: 'easeOut' }}
       />
     </>
   );
