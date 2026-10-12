@@ -104,7 +104,7 @@ const CustomCursor: React.FC = () => {
   return (
     <>
       <motion.div
-        className="fixed top-0 left-0 rounded-full pointer-events-none mix-blend-difference flex items-center justify-center"
+        className="fixed top-0 left-0 rounded-full pointer-events-none flex items-center justify-center"
         style={{
           x: ringX,
           y: ringY,
@@ -113,8 +113,12 @@ const CustomCursor: React.FC = () => {
           translateX: '-50%',
           translateY: '-50%',
           zIndex: 9998,
-          backgroundColor: isHovering && hoverText ? '#F4F0E8' : 'transparent',
-          border: isHovering && !hoverText ? '1px solid #151515' : '1px solid transparent',
+          backgroundColor:
+            isHovering && hoverText ? 'rgba(250, 204, 21, 0.92)' : 'transparent',
+          border:
+            isHovering && !hoverText
+              ? '1px solid rgba(249, 115, 22, 0.8)'
+              : '1px solid rgba(250, 204, 21, 0.28)',
         }}
         animate={{
           scale: isHovering ? (hoverText ? 1.5 : 1.2) : 1,
@@ -123,23 +127,24 @@ const CustomCursor: React.FC = () => {
         transition={{ duration: 0.2, ease: 'easeOut' }}
       >
         {isHovering && hoverText && (
-          <span className="text-[#151515] text-[8px] font-medium tracking-widest uppercase">
+          <span className="text-[#060608] text-[8px] font-bold tracking-widest uppercase">
             {hoverText}
           </span>
         )}
       </motion.div>
 
       <motion.div
-        className="fixed top-0 left-0 rounded-full pointer-events-none mix-blend-difference"
+        className="fixed top-0 left-0 rounded-full pointer-events-none"
         style={{
           x: dotX,
           y: dotY,
-          width: 8,
-          height: 8,
+          width: 7,
+          height: 7,
           translateX: '-50%',
           translateY: '-50%',
           zIndex: 9999,
-          backgroundColor: '#F4F0E8',
+          backgroundColor: '#FACC15',
+          boxShadow: '0 0 14px rgba(249, 115, 22, 0.9)',
         }}
         animate={{
           scale: isHovering ? 0 : 1,

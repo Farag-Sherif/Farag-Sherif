@@ -3,30 +3,62 @@ import { personal } from '../../data/personal';
 
 export default function Achievements() {
   const stats = [
-    { label: "Years Experience", value: personal.stats.yearsExperience, suffix: "+" },
-    { label: "Projects Completed", value: personal.stats.projectsCompleted, suffix: "+" },
-    { label: "Technologies", value: personal.stats.technologies, suffix: "" },
-    { label: "Professional Roles", value: personal.stats.professionalRoles, suffix: "" },
+    {
+      label: 'Years of Experience',
+      value: personal.stats.yearsExperience,
+      suffix: '+',
+      detail: 'Building modern web apps',
+    },
+    {
+      label: 'Projects Delivered',
+      value: personal.stats.projectsCompleted,
+      suffix: '+',
+      detail: 'Commercial & open-source',
+    },
+    {
+      label: 'Core Technologies',
+      value: personal.stats.technologies,
+      suffix: '+',
+      detail: 'React, TS, Next.js & tools',
+    },
+    {
+      label: 'Industry Roles',
+      value: personal.stats.professionalRoles,
+      suffix: '',
+      detail: 'Engineering & leadership',
+    },
   ];
 
   return (
-    <section className="bg-[#C85A3E] text-[#151515] py-24 lg:py-32 px-6 lg:px-12">
-      <div className="max-w-screen-2xl mx-auto">
+    <section
+      id="achievements"
+      className="relative bg-transparent text-zinc-100 py-12 px-6 md:px-12 lg:px-16"
+    >
+      <div className="max-w-6xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="grid grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8"
+          transition={{ duration: 0.6 }}
+          className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
         >
           {stats.map((stat, idx) => (
-            <div key={idx} className="flex flex-col items-center lg:items-start text-center lg:text-left">
-              <span className="text-6xl md:text-8xl lg:text-[8rem] font-bold tracking-tighter leading-none mb-4">
-                {stat.value}{stat.suffix}
+            <div
+              key={idx}
+              className="glass-card rounded-3xl p-6 sm:p-7 flex flex-col justify-between"
+            >
+              <span className="text-3xl sm:text-5xl font-heading font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-orange-400 to-yellow-400">
+                {stat.value}
+                {stat.suffix}
               </span>
-              <span className="text-lg md:text-xl font-bold uppercase tracking-widest">
-                {stat.label}
-              </span>
+              <div className="mt-3">
+                <span className="block text-sm font-semibold text-white">
+                  {stat.label}
+                </span>
+                <span className="block text-xs text-zinc-300 mt-0.5">
+                  {stat.detail}
+                </span>
+              </div>
             </div>
           ))}
         </motion.div>

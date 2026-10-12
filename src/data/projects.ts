@@ -15,16 +15,17 @@ export const projects: Project[] = [
     id: "ovenza",
     title: "Ovenza 3D Platform",
     description:
-      "Developed an interactive 3D web experience for product display using React, TypeScript, Tailwind CSS, and Three.js. Built a simple, highly engaging, and visually appealing user interface with blueprint architecture to showcase products elegantly.",
-    image: "", // Needs image path
+      "Developed an interactive 3D web experience for product display using React, TypeScript, Tailwind CSS, and Three.js. Built a highly engaging, visually appealing user interface with scalable blueprint architecture to showcase products with elegant 3D rendering.",
+    image: "/images/projects/15.webp",
     techStack: [
       "React",
       "TypeScript",
       "Tailwind CSS",
       "Three.js",
-      "Blueprint",
+      "3D Rendering",
+      "Blueprint Architecture",
     ],
-    liveUrl: "",
+    liveUrl: "https://ovanza-3d-eta.vercel.app/",
     githubUrl: "",
     category: "frontend",
     featured: true,
@@ -34,7 +35,7 @@ export const projects: Project[] = [
     title: "Doctor AI",
     description:
       "Developed a responsive and modern healthcare AI platform using React.js, Vite, and Tailwind CSS. The platform integrates intelligent healthcare features and provides a seamless user experience across devices.",
-    image: "/images/projects/7.png",
+    image: "/images/projects/7.webp",
     techStack: [
       "React JS",
       "Tailwind CSS",
@@ -52,7 +53,7 @@ export const projects: Project[] = [
     title: "Caller Information & CRM Mobile App UI",
     description:
       "Designed a complete Android CRM application that automatically identifies callers and displays their profile during incoming calls. Created a full design system including authentication, dashboard, customer details, search, call history, notes management, and live calling interfaces. Prioritized fast information access for customer support agents through clear visual hierarchy, reusable components, and intuitive navigation while maintaining a modern, responsive mobile experience.",
-    image: "/images/projects/14.png",
+    image: "/images/projects/14.webp",
     techStack: [
       "Figma",
       "UI/UX Design",
@@ -76,7 +77,7 @@ export const projects: Project[] = [
     title: "Albarq Alsarea Restaurant Platform",
     description:
       "Enhanced the user experience of a bilingual (Arabic/English) restaurant ordering platform by redesigning the restaurant categories, filters, and search experience. Optimized category logic to automatically hide empty categories with no available restaurants and dynamically sort categories by restaurant count, making navigation faster and more relevant. Redesigned the category cards, dish categories section, filter sidebar, and restaurant browsing interface while maintaining full responsiveness. Implemented a global header search for quick restaurant discovery, improved filtering performance, and delivered a cleaner, more intuitive UI for both desktop and mobile users.",
-    image: "/images/projects/12.png",
+    image: "/images/projects/12.webp",
     techStack: [
       "React JS",
       "Tailwind CSS",
@@ -97,10 +98,10 @@ export const projects: Project[] = [
   },
   {
     id: "Invitations",
-    title: "Invitations",
+    title: "Invitations — Wedding Platform",
     description:
       "Built a comprehensive bilingual (Arabic/English) wedding invitation platform featuring an advanced dashboard for complete invitation management. Users can customize invitation themes, cover images, event information, background music, comments, gallery images, locations, and guest details through an intuitive interface. Implemented dynamic real-time preview functionality, enabling users to instantly review invitation changes before publishing. Designed a fully responsive experience optimized for mobile and desktop devices.",
-    image: "/images/projects/11.png",
+    image: "/images/projects/11.webp",
     techStack: [
       "React JS",
       "Tailwind CSS",
@@ -121,10 +122,10 @@ export const projects: Project[] = [
   },
   {
     id: "BlueBrain",
-    title: "Blue Brain",
+    title: "Blue Brain Agency",
     description:
       "Developed a responsive bilingual (English/Arabic) web application for Blue Brain Agency using React and Tailwind CSS. Integrated a custom REST API with Axios for dynamic content rendering and implemented seamless RTL/LTR language switching for an enhanced multilingual user experience.",
-    image: "/images/projects/10.png",
+    image: "/images/projects/10.webp",
     techStack: [
       "React JS",
       "Tailwind CSS",
@@ -141,10 +142,10 @@ export const projects: Project[] = [
   },
   {
     id: "Seada",
-    title: "Seada",
+    title: "Seada — Corporate Landing Page",
     description:
       "Migrated and upgraded the Seada website from Next.js to React (Vite), transforming it from an e-commerce platform into a modern corporate landing page. Built a premium responsive experience with dynamic bilingual support, smooth animations, and optimized performance across all devices.",
-    image: "/images/projects/9.png",
+    image: "/images/projects/9.webp",
     techStack: [
       "React",
       "Vite",
@@ -162,10 +163,10 @@ export const projects: Project[] = [
   },
   {
     id: "ElOmdaa",
-    title: "El Omdaa",
+    title: "El Omdaa E-Commerce",
     description:
       "Developed a responsive bilingual e-commerce platform using React.js and Redux. Implemented dynamic shipping cost calculations, persistent address management, real-time cart synchronization with the server, and a high-priority notification system to improve the overall shopping experience.",
-    image: "/images/projects/8.png",
+    image: "/images/projects/8.webp",
     techStack: [
       "React JS",
       "Redux",
@@ -184,10 +185,10 @@ export const projects: Project[] = [
   },
   {
     id: "ayat",
-    title: "Ayat",
+    title: "Ayat — Islamic Learning Platform",
     description:
       "Built an Islamic learning platform showcasing Quran recitations by esteemed sheikhs, an extensive collection of religious texts, daily Dhikr prompts. It provides interactive Quran study with word-by-word explanations, precise prayer timings with countdowns, and a memorization feature for efficient, structured learning.",
-    image: "/images/projects/4.png",
+    image: "/images/projects/4.webp",
     techStack: [
       "React JS",
       "Tailwind",
@@ -205,7 +206,7 @@ export const projects: Project[] = [
     title: "Movie & TV Show Platform",
     description:
       "Developed a dynamic movie and TV show platform using React.js, leveraging TMDb API for real-time content updates. The platform offers a sleek, responsive interface with browse, search, and filter capabilities. Includes secure user authentication and personalized watchlists.",
-    image: "/images/projects/3.png",
+    image: "/images/projects/3.webp",
     techStack: [
       "React JS",
       "JavaScript",
@@ -220,12 +221,12 @@ export const projects: Project[] = [
   },
   {
     id: "aqar",
-    title: "AQAR",
+    title: "AQAR — Real Estate Platform",
     description:
       "Collaborated with a team to develop a real estate platform showcasing premium villas and apartments, featuring detailed property listings and responsive design. Includes a secure login system, smooth navigation, and an advanced admin dashboard for managing bookings and properties.",
-    image: "/images/projects/6.png",
+    image: "/images/projects/6.webp",
     techStack: ["React JS", "Bootstrap", "JavaScript", "API", "Authentication"],
-    liveUrl: "",
+    liveUrl: "https://mohamedabuzahda.github.io/Real-State/",
     githubUrl: "https://github.com/mohamedabuzahda/Real-State.git",
     category: "fullstack",
     featured: true,
@@ -235,7 +236,7 @@ export const projects: Project[] = [
     title: "Book Store",
     description:
       "Developed an eCommerce bookstore platform using React.js, delivering a seamless user experience with intuitive book browsing, user authentication, dynamic shopping cart, and a comprehensive admin dashboard for efficient management of inventory, orders, and user data.",
-    image: "/images/projects/2.png",
+    image: "/images/projects/2.webp",
     techStack: [
       "React JS",
       "JavaScript",
@@ -255,4 +256,5 @@ export const projectCategories = [
   { key: 'react', label: 'React' },
   { key: 'fullstack', label: 'Full-Stack' },
   { key: 'frontend', label: 'Frontend' },
+  { key: 'UI/UX', label: 'UI/UX' },
 ] as const;

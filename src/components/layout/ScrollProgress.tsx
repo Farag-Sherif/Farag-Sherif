@@ -16,7 +16,7 @@ const ScrollProgress = memo(function ScrollProgress() {
       style={{
         scaleX,
         background:
-          'linear-gradient(90deg, #8B5CF6 0%, #06B6D4 50%, #F43F5E 100%)',
+          'linear-gradient(90deg, #EF4444 0%, #F97316 50%, #FACC15 100%)',
         transformOrigin: '0%',
       }}
     />

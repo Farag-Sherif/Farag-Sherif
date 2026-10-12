@@ -13,8 +13,8 @@ export const ProjectImage: React.FC<ProjectImageProps> = ({ src, alt }) => {
   const mouseXSpring = useSpring(x, { stiffness: 150, damping: 20 });
   const mouseYSpring = useSpring(y, { stiffness: 150, damping: 20 });
 
-  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], [10, -10]);
-  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], [-10, 10]);
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], [6, -6]);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], [-6, 6]);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -35,20 +35,20 @@ export const ProjectImage: React.FC<ProjectImageProps> = ({ src, alt }) => {
 
   return (
     <div
-      className="relative w-full h-full overflow-hidden"
-      style={{ perspective: 1000 }}
+      className="relative w-full h-full overflow-hidden bg-[#060A14]"
+      style={{ perspective: 1200 }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
       <motion.img
         src={src}
         alt={alt}
+        loading="lazy"
         style={{
           rotateX,
           rotateY,
-          scale: 1.05,
         }}
-        className="w-full h-full object-cover transition-[filter] duration-700 grayscale hover:grayscale-0"
+        className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
       />
     </div>
   );

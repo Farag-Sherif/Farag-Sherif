@@ -1,63 +1,98 @@
 import { motion } from 'framer-motion';
 import { skills, skillCategories } from '../../data/skills';
-import SkillsSphere from '../3d/SkillsSphere';
 
 export default function Skills() {
   return (
-    <section id="skills" className="bg-[#F4F0E8] text-[#151515] py-24 lg:py-48 px-6 lg:px-12">
-      <div className="max-w-screen-2xl mx-auto">
+    <section
+      id="skills"
+      className="relative bg-transparent text-zinc-100 py-24 lg:py-32 px-6 md:px-12 lg:px-16"
+    >
+      <div className="max-w-6xl mx-auto space-y-12">
+        {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="mb-24 lg:mb-32 text-center"
+          transition={{ duration: 0.6 }}
+          className="flex flex-col md:flex-row md:items-end justify-between gap-6"
         >
-          <h2 className="text-5xl lg:text-[7rem] font-bold uppercase tracking-tighter leading-none text-[#151515] mb-6">
-            Technical <br/> Arsenal.
-          </h2>
+          <div className="space-y-4 max-w-2xl">
+            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-500/15 border border-orange-500/30 text-xs font-mono uppercase tracking-widest text-amber-400">
+              02 // Technical Stack &amp; Ecosystem
+            </span>
+            <h2 className="text-3xl sm:text-5xl font-heading font-bold tracking-tight text-white leading-tight">
+              Modern tools engineered for{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-orange-400 to-yellow-400">
+                production scale.
+              </span>
+            </h2>
+          </div>
+          <p className="text-sm sm:text-base text-zinc-300 max-w-md">
+            Type-safe frontend development, component-driven styling, and version-controlled workflows.
+          </p>
         </motion.div>
 
-        {/* 3D Visualization for Desktop */}
-        <div className="hidden lg:block w-full h-[800px] bg-[#151515]/5 rounded-3xl overflow-hidden mb-32">
-          <SkillsSphere />
-        </div>
-
-        {/* 2D Fallback for Mobile (and detailed view) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:hidden gap-12">
+        {/* 4 Category Bento Cards with Proficiency Bars */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {skillCategories.map((category, idx) => {
             const categorySkills = skills.filter((s) => s.category === category.key);
-            
+
             return (
               <motion.div
                 key={category.key}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: idx * 0.1 }}
-                className="group"
+                transition={{ duration: 0.6, delay: idx * 0.08 }}
+                className="glass-panel rounded-3xl p-7 sm:p-8"
               >
-                <div className="mb-10 pb-4 border-b-2 border-[#151515]">
-                  <h3 className="text-2xl md:text-3xl font-bold uppercase tracking-tight text-[#151515]">
-                    {category.label}
-                  </h3>
-                  <p className="text-sm font-medium uppercase tracking-widest text-[#C85A3E] mt-2">
-                    {category.description}
-                  </p>
+                <div className="flex items-center justify-between mb-6 pb-4 border-b border-white/[0.08]">
+                  <div>
+                    <h3 className="text-xl font-bold text-white">
+                      {category.label}
+                    </h3>
+                    <p className="text-xs text-zinc-300 mt-1">
+                      {category.description}
+                    </p>
+                  </div>
+                  <span className="px-3 py-1 rounded-lg bg-amber-500/15 border border-amber-500/30 text-xs font-mono text-amber-300">
+                    {categorySkills.length} Skills
+                  </span>
                 </div>
-                
-                <ul className="space-y-6">
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                   {categorySkills.map((skill) => (
-                    <li key={skill.name} className="flex items-center gap-4">
-                      <span className="text-3xl text-[#151515] group-hover:text-[#C85A3E] transition-colors duration-300">
-                        <skill.icon />
-                      </span>
-                      <span className="text-lg md:text-xl font-medium tracking-wide text-[#151515]">
-                        {skill.name}
-                      </span>
-                    </li>
+                    <div
+                      key={skill.name}
+                      className="p-3.5 rounded-2xl bg-white/[0.03] hover:bg-white/[0.06] border border-white/[0.07] transition-all space-y-2.5"
+                    >
+                      <div className="flex items-center justify-between gap-2">
+                        <div className="flex items-center gap-2.5">
+                          <span
+                            className="text-xl"
+                            style={{ color: skill.color }}
+                          >
+                            <skill.icon />
+                          </span>
+                          <span className="text-sm font-semibold text-white">
+                            {skill.name}
+                          </span>
+                        </div>
+                        <span className="text-xs font-mono text-amber-300">
+                          {skill.proficiency}%
+                        </span>
+                      </div>
+
+                      {/* Crimson -> Orange -> Gold Progress Bar */}
+                      <div className="w-full h-1.5 rounded-full bg-zinc-800 overflow-hidden">
+                        <div
+                          className="h-full rounded-full bg-gradient-to-r from-red-500 via-orange-500 to-yellow-400"
+                          style={{ width: `${skill.proficiency}%` }}
+                        />
+                      </div>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </motion.div>
             );
           })}

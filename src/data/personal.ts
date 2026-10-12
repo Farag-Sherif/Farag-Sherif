@@ -21,9 +21,8 @@ export const personal = {
   email: "farag.sherif500@gmail.com",
   phone: "+201032195380",
   location: "Shebin El Kom, El Menoufia",
-  resumeUrl:
-    "https://drive.google.com/uc?export=download&id=1wgLcsjQewX64ZStllJir0U2rZu3yH6T2",
-  profileImage: "/images/profile/farag-3.png",
+  resumeUrl: "/Farag_Sherif_CV.pdf",
+  profileImage: "/images/profile/farag-3.webp",
   social: {
     linkedin: "https://linkedin.com/in/farag-mohammed-sherif-679780298",
     github: "https://github.com/Farag-Sherif",

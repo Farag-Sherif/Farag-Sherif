@@ -2,12 +2,12 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-background: #F4F0E8;
-  --color-foreground: #151515;
-  --color-muted: #57534E;
-  --color-accent: #C85A3E;
-  --color-accent-secondary: #6E2838;
-  --color-muted-cobalt: #3157A4;
+  --color-background: #060608;
+  --color-foreground: #FAFAFA;
+  --color-muted: #D4D4D8;
+  --color-accent: #F97316;
+  --color-accent-secondary: #EF4444;
+  --color-accent-gold: #FACC15;
   
   --font-sans: 'Inter', system-ui, sans-serif;
   --font-heading: 'Inter Tight', system-ui, sans-serif;
@@ -18,6 +18,7 @@
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    color-scheme: dark;
   }
   
   body {
@@ -41,7 +42,46 @@
   }
   
   ::selection {
-    background: rgba(200, 90, 62, 0.2);
-    color: #151515;
+    background: rgba(249, 115, 22, 0.35);
+    color: #FFFFFF;
   }
+}
+
+/* Carbon-Black & Molten Gold/Crimson Glass Surfaces */
+.glass-panel {
+  background: linear-gradient(
+    145deg,
+    rgba(16, 14, 18, 0.90) 0%,
+    rgba(9, 8, 11, 0.93) 100%
+  );
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(251, 191, 36, 0.16);
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.75),
+    inset 0 1px 0 rgba(255, 255, 255, 0.09);
+}
+
+.glass-card {
+  background: linear-gradient(
+    145deg,
+    rgba(20, 17, 22, 0.88) 0%,
+    rgba(11, 10, 14, 0.92) 100%
+  );
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border: 1px solid rgba(249, 115, 22, 0.22);
+  box-shadow:
+    0 14px 36px rgba(0, 0, 0, 0.65),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transition:
+    border-color 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.glass-card:hover {
+  border-color: rgba(250, 204, 21, 0.5);
+  box-shadow: 0 16px 40px rgba(239, 68, 68, 0.15);
 }
