@@ -1,26 +1,26 @@
 export const personal = {
   name: "Farag Mohammed Sherif",
   shortName: "Farag Sherif",
-  title: "Frontend Developer & Software Engineer",
+  title: "Frontend Developer · React.js · TypeScript · Next.js",
   roles: [
     "Frontend Developer",
-    "Web Designer",
-    "React JS Developer",
-    "JavaScript Lover",
+    "React.js & Next.js Developer",
+    "TypeScript Developer",
+    "UI/UX & Web Designer",
     "Software Engineer",
   ],
-  bio: `React Frontend Developer specializing in React.js, TypeScript, REST API integration, reusable UI components, and responsive web applications.`,
+  bio: `Frontend Developer with production experience building responsive, multilingual web applications using React.js, Next.js, TypeScript, and Tailwind CSS — specializing in REST API integration, state management with Redux & React Query, and frontend performance optimization.`,
 
   about: [
-    `I specialize in creating modern web experiences using React.js, TypeScript, Next.js, and contemporary frontend technologies. My focus is on building scalable, maintainable, and responsive applications that combine excellent performance with intuitive user experiences.`,
+    `Frontend Developer with production experience building responsive, multilingual web applications using React.js, Next.js, TypeScript, and Tailwind CSS. Experienced in REST API integration, state management with Redux and React Query, and frontend performance optimization including lazy loading and code splitting.`,
 
-    `I have worked on commercial projects ranging from healthcare and e-commerce platforms to multilingual corporate websites, implementing advanced features such as state management, API integrations, dynamic localization, and responsive UI architectures. I am passionate about writing clean, efficient code and continuously learning new technologies to stay at the forefront of web development.`,
+    `I have worked on commercial projects ranging from interactive 3D product platforms and AI healthcare systems to bilingual e-commerce and restaurant platforms — implementing scalable component architectures, dynamic localization (Arabic/English with seamless RTL/LTR switching), and intuitive user experiences.`,
 
-    `As a Computer Science student and continuous learner, I am passionate about writing clean code, solving complex problems, and delivering products that make a real impact. I enjoy collaborating with teams, learning new technologies, and turning ideas into polished digital experiences.`,
+    `As a Computer Science student at the Faculty of Computers & Information, Menoufia University, I am passionate about writing clean, maintainable code, solving complex engineering problems, and collaborating with cross-functional teams to turn ambitious visions into polished digital products.`,
   ],
   email: "farag.sherif500@gmail.com",
   phone: "+201032195380",
-  location: "Shebin El Kom, El Menoufia",
+  location: "Shebin El Kom, El Menoufia, Egypt",
   resumeUrl: "/Farag_Sherif_CV.pdf",
   profileImage: "/images/profile/farag-3.webp",
   social: {
@@ -31,15 +31,15 @@ export const personal = {
     email: "mailto:farag.sherif500@gmail.com",
   },
   education: {
-    degree: "Computer Science",
+    degree: "B.Sc. in Computer Science",
     university: "Menoufia University",
-    faculty: "Faculty of Computer and Information",
-    period: "2023 - Present",
+    faculty: "Faculty of Computers & Information",
+    period: "2023 – 2027 (Expected)",
   },
   stats: {
     yearsExperience: 2,
     projectsCompleted: 30,
-    technologies: 13,
+    technologies: 18,
     professionalRoles: 4,
   },
   contactText: `I am always open to discussing new projects, creative ideas, or opportunities to be part of your visions. Feel free to reach out to me through any of the platforms below.`,
